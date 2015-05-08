@@ -1,0 +1,49 @@
+# this upmix 2channels to 3, one for LFE
+pcm.upmix2021 {
+    type plug
+    slave.pcm lowpass2121
+    slave.channels 3
+    ttable {
+        0.0    1
+        1.1    1
+        0.2    1
+        1.2    1
+    }
+}
+
+# this should apply low pass filter for LFE channel
+pcm.lowpass2121 {
+    type ladspa
+    slave.pcm upmix2121
+    path "/usr/lib/ladspa"
+    channels 3
+    plugins {       
+        0 {
+            id 1672 # 4 Pole Low-Pass Filter with Resonance (FCRCIA) (1672/lp4pole_fcrcia_oa)
+            policy none
+            input.bindings.2 "Input";
+            output.bindings.2 "Output";
+            input { controls [ 200 0 ] }
+        }
+        1 {
+            id 1098
+            policy duplicate
+            input.bindings.0 "Input";
+            output.bindings.0 "Output";        
+        }         
+    }
+}
+
+
+pcm.upmix2121 {
+    type plug
+    slave.pcm surround21
+    slave.channels 3
+    ttable {
+        0.0 1
+        1.1 1
+        2.2 1
+    }
+}
+
+pcm.!default upmix2021

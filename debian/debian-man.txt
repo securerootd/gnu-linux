@@ -1,0 +1,86 @@
+xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
+xdg-mime query default inode/directory
+xdg-mime default qBittorrent.desktop x-scheme-handler/magnet application/x-bittorrent
+xdg-mime query default x-scheme-handler/magnet
+xdg-mime query default text/plain
+xdg-mime default mousepad.desktop text/plain
+
+
+
+systemd-analyze blame
+systemd-analyze
+systemd-analyze plot
+
+systemctl enable systemd-readahead-collect.service systemd-readahead-replay.service
+
+update-alternatives --display x-cursor-theme 
+update-alternatives --install /usr/share/icons/default/index.theme x-cursor-theme /usr/share/icons/Bluecurve-FC4/cursor.theme 8000
+update-alternatives --install /usr/share/icons/default/index.theme x-cursor-theme /usr/share/icons/Bluecurve-FC6/cursor.theme 6000
+update-alternatives --install /usr/share/icons/default/index.theme x-cursor-theme /usr/share/icons/Bluecurve-inverse-FC4/cursor.theme 4000
+update-alternatives --install /usr/share/icons/default/index.theme x-cursor-theme /usr/share/icons/Bluecurve-inverse-FC6/cursor.theme 2000
+update-alternatives --display x-cursor-theme 
+
+
+Change GTK-Theme:
+
+gsettings set org.gnome.desktop.interface gtk-theme "CoolestThemeOnEarth"
+
+Change Icon-Theme:
+
+gsettings set org.gnome.desktop.interface icon-theme 'MyIconTheme'
+
+Change Window-Theme:
+
+gsettings set org.gnome.desktop.wm.preferences theme "CoolestThemeOnEarth"
+
+
+bash /etc/fonts/infinality/infctl.sh setstyle
+
+# Random cow say random thing
+/usr/games/fortune | /usr/games/cowsay -f $(ls /usr/share/cowsay/cows/ | shuf -n1)
+
+unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract exfat-utils exfat-fuse hfsplus hfsprogs hfsutils android-tools-adb android-tools-fastboot ntfs-3g ssh gpm fontconfig-infinality apt-listbugs sudo gksu gvfs-backends gvfs-fuse smbclient gvfs-smb blueman bluetooth
+
+browser-plugin-vlc smplayer mplayer libreoffice icedtea-7-plugin flashplayer-mozilla libtxc-dxtn0 libtxc-dxtn0:i386
+ 
+python-vte clearlooks-phenix-theme xarchiver
+
+aisleriot gnome-chess gnome-mines gnome-mahjongg gnome-sudoku
+
+php5-curl php5-gd php5-imagick php5-imap php5-mcrypt php5-memcache php5-cli php5-recode php5-snmp php5-sqlite php5-tidy php5-xmlrpc php5-xsl php5-fpm php5-mysqlnd php5-pgsql php5-xcache mysql-server mysql-client postgresql-client postgresql lighttpd
+
+i965-va-driver intel-microcode firmware-linux-nonfree conky-all vainfo
+
+fortunes cowsay gimp gimp-data-extras
+
+
+echo "deb http://ppa.launchpad.net/no1wantdthisname/ppa/ubuntu utopic main" | tee /etc/apt/sources.list.d/infinality.list
+echo "deb-src http://ppa.launchpad.net/no1wantdthisname/ppa/ubuntu utopic main" | tee -a /etc/apt/sources.list.d/infinality.list
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E985B27B
+
+dpkg --add-architecture i386
+
+gtk2-engines-murrine gtk2-engines-pixbuf gtk3-engines-unico
+
+sudo hwclock --show
+sudo hwclock --systohc --localtime
+sudo hwclock --localtime
+
+pulseaudio pavucontrol qbittorrent qt4-qtconfig ttf-indic-fonts ssh mesa-utils mesa-utils-extra xscreensaver-gl-extra 
+
+sound-theme-freedesktop ntpdate xfce4-power-manager command-not-found apt-listbugs compton lxappearance-obconf xdg-user-dirs-gtk apt-xapian-index
+
+systemd systemd-ui systemd-sysv systemd-shim libsystemd-daemon0 libsystemd-journal0 libsystemd-login0
+
+for dir in /usr/share/fonts/truetype/*
+do
+  test -d "$dir" || continue
+  sudo mkfontscale -b -s -l
+done
+
+sudo nano /usr/share/polkit-1/actions/org.freedesktop.udisks2.policy
+
+GRUB_CMDLINE_LINUX_DEFAULT="acpi_osi=Linux acpi_backlight=vendor"
+
+spacefm-gtk3 openbox obmenu openbox-menu lxappearance
+

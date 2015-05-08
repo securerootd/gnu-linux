@@ -1,0 +1,65 @@
+mkfs.vfat -n {LABEL} {EFI}
+mkfs.ext4 -L {LABEL} {partition}
+mkswap -L {LABEL} {partition}
+swapon {partition}
+mount {partition} /mnt
+wifi-menu
+nano /etc/pacman.conf 
+nano /etc/pacman.d/mirrorlist
+pacstrap /mnt
+genfstab -U /mnt > /mnt/etc/fstab
+arch-chroot /mnt /bin/bash
+
+
+nano /etc/pacman.conf 
+
+pacman -Syu
+
+pacman -S bash-completion zsh gpm numlockx ntp wget tree pv
+
+pacman -S base-devel xorg xfce4 xfce4-goodies linux-headers
+
+pacman -S networkmanager network-manager-applet
+
+pacman -S lightdm-gtk-greeter grub efibootmgr os-prober
+
+pacman -S udisks2 dosfstools mtools ntfs-3g parted gparted exfat-utils fuse-exfat android-tools gpart btrfs-progs f2fs-tools xdg-user-dirs xdg-user-dirs-gtk gvfs-smb gvfs gvfs-mtp reiserfsprogs testdisk
+
+pacman -S $(pacman -Ssq ttf)
+
+pacman -S libreoffice firefox chromium flashplugin mplayer smplayer vlc icedtea-web audacity handbrake epdfview gwget aria2 vdpauinfo mesa-vdpau libva-intel-driver gst-libav gst-plugins-good libdvdcss zip unzip xz unrar lzop cpio p7zip xarchiver gnome-keyring xsane
+
+pacman -S wireshark-gtk nmap pulseaudio pavucontrol paprefs alsa-utils alsa-tools pulseaudio-alsa bluez bluez-utils bluez-plugins bluez-firmware bluez-cups bluez-hid2hci
+
+pacman -S supertux fortune-mod aisleriot cowsay gnome-chess gnome-mahjongg gnome-mines gnome-sudoku supertuxkart steam pysolfc-cardsets gnuchess
+
+pacman -S $(pacman -Ssq gimp-plugin-) gimp pinta $(pacman -Ssq xcursor) tangerine-icon-theme human-icon-theme faience-icon-theme faenza-icon-theme elementary-icon-theme
+
+pacman -S git subversion gnupg flex bison gperf sdl wxgtk squashfs-tools curl ncurses zlib schedtool perl-switch zip unzip libxslt python2-virtualenv bc gcc-multilib lib32-zlib lib32-ncurses lib32-readline ccache
+
+pacman -S nvidia nvidia-utils lib32-nvidia-utils opencl-nvidia lib32-opencl-nvidia nvidia-libgl lib32-nvidia-libgl nvidia-cg-toolkit lib32-nvidia-cg-toolkit libvdpau lib32-libvdpau
+
+pacman -Syu
+
+nano /etc/mkinitcpio.conf 
+mkinitcpio -p linux
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --recheck
+nano /etc/default/grub
+grub-mkconfig -o /boot/grub/grub.cfg
+
+useradd -m -G wheel,audio,video,storage -s /bin/bash abhisek -c "Abhisek Mukherjee"
+
+curl -O https://aur.archlinux.org/packages/pa/package-query/package-query.tar.gz
+tar zxvf package-query.tar.gz
+cd package-query
+makepkg -si
+cd ..
+
+curl -O https://aur.archlinux.org/packages/ya/yaourt/yaourt.tar.gz
+tar zxvf yaourt.tar.gz
+cd yaourt
+makepkg -si
+cd ..
+
+yaourt -S aurvote customizepkg rsync
+yaourt -Syu --aur

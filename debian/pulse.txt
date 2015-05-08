@@ -1,0 +1,12 @@
+default-sample-channels = 3
+enable-lfe-remixing = yes
+
+/usr/share/pulseaudio/alsa-mixer/profile-sets/default.conf
+
+...
+[Mapping analog-surround-21]
+device-strings = surround21:%f
+channel-map = front-left,front-right,lfe
+paths-output = analog-output analog-output-lineout analog-output-speaker analog-output-desktop-speaker
+priority = 10
+direction = output

@@ -1,0 +1,7 @@
+mkdir /etc/lightdm/lightdm.conf.d
+nano /etc/lightdm/lightdm.conf.d/01_abhis3k.conf
+
+[SeatDefaults]
+greeter-session=lightdm-gtk-greeter
+greeter-hide-users=false
+session-wrapper=/etc/X11/Xsession

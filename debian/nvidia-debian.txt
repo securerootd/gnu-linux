@@ -1,0 +1,49 @@
+nvidia-settings nvidia-opencl-icd nvidia-detect nvidia-alternative nvidia-libopencl1 nvidia-driver
+
+Configuration
+
+As the nvidia driver is not autodetected by Xorg, a configuration file is required to be supplied. For example:
+
+/etc/X11/xorg.conf.d/20-nvidia.conf
+
+    Section "Device"
+            Identifier "GTS 450"
+            Driver "nvidia"
+    EndSection
+
+The configuration file above can be created using these commands:
+
+    # mkdir /etc/X11/xorg.conf.d
+    # echo -e 'Section "Device"\n\tIdentifier "My GPU"\n\tDriver "nvidia"\nEndSection' > /etc/X11/xorg.conf.d/20-nvidia.conf
+
+Please note that this command will break your Xorg configuration on Optimus systems. For such hardware, see Bumblebee instead.
+
+Restart your system at this point to enable the nouveau driver blacklist.
+
+Performance
+
+The driver options below can be included for increased performance:
+
+/etc/X11/xorg.conf.d/20-nvidia.conf
+
+Section "Device"
+    Identifier "GTS 450"
+    Driver "nvidia"
+    Option "NoLogo" "false"
+    Option "RenderAccel" "true"
+    Option "TripleBuffer" "true"
+    Option "MigrationHeuristic" "greedy"
+EndSection
+
+Iceweasel / Icedove
+
+Use the following commands to determine the current values of InitialPixmapPlacement and GlyphCache:
+
+$ nvidia-settings -q InitialPixmapPlacement
+$ nvidia-settings -q GlyphCache
+
+If different values are reported, these commands can be added to ~/.xsession for improving application performance:
+
+nvidia-settings -a InitialPixmapPlacement=2
+nvidia-setttings -a GlyphCache=1
+
