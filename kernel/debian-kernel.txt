@@ -2,7 +2,7 @@ export CFLAGS="-march=native -mtune=native -msse4.2 -mavx -msse2avx -O2"
 make nconfig
 scripts/config --disable DEBUG_INFO
 make clean
-
+# Old way for kernel
 make-kpkg --rootcmd fakeroot --initrd kernel_image kernel_headers modules_image
-
-time(make KDEB_PKGVERSION=4.0.0-abhis3k deb-pkg)
+# New way for kernel
+time(make KDEB_PKGVERSION=4.0.2-abhis3k deb-pkg)
