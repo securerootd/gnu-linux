@@ -1,0 +1,109 @@
+[haskell-core]
+Server = http://xsounds.org/~haskell/core/$arch
+
+[openrc-eudev]
+Server = http://downloads.sourceforge.net/project/archopenrc/$repo/$arch
+
+
+
+nano /etc/pacman.conf 
+nano /etc/pacman.d/mirrorlist 
+pacman -Syu
+nano /etc/pacman.conf 
+pacman -Syu
+pacman -Sy openrc-base
+rc-update add dmcrypt boot
+rc-update add dmeventd boot
+rc-update add lvm boot
+rc-update add mdadm boot
+rc-update add device-mapper boot
+for name in {dbus,dhcpcd,nscd,ftpd,cronie};do rc-update add '$name';done
+for name in {dbus,dhcpcd,nscd,ftpd,cronie};do rc-update add '$name' defaults;done
+for name in {dbus,dhcpcd,nscd,ftpd,cronie};do rc-update add "$name" default;done
+rc-status --all
+rc-status --list
+ln -sfv /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
+nano /etc/locale.gen 
+locale-gen 
+echo LANG=en_IN.UTF-8 > /etc/locale.conf
+nano /etc/mkinitcpio.conf 
+mkinitcpio -p linux
+pacman -Syu
+pacman -S zsh gpm numlockx ntp-openrc wget tree pv
+rc-update add ntp default
+rc-update add ntpd default
+pacman -S zsh gpm-openrc numlockx ntp-openrc wget tree pv eudev-openrc eudev-systemdcompat 
+pacman -S zsh gpm-openrc numlockx ntp-openrc wget tree pv eudev-openrc eudev-systemdcompat upower-pm-utils
+rc-update add ntpd default
+rc-update add gpm default
+pacman -S lightdm-gtk-greeter grub efibootmgr os-prober 
+pacman -S lightdm-gtk-greeter grub efibootmgr os-prober base-devel xorg xfce4 xfce4-goodies
+nano /etc/resolv.conf 
+pacman -S lightdm-gtk-greeter grub efibootmgr os-prober base-devel xorg xfce4 xfce4-goodies networkmanager network-manager-applet 
+pacman -S lightdm-gtk-greeter grub efibootmgr os-prober base-devel xorg xfce4 xfce4-goodies networkmanager network-manager-applet openrc-desktop
+pacman -S lightdm-gtk-greeter grub efibootmgr os-prober base-devel xorg xfce4 xfce4-goodies networkmanager network-manager-applet openrc-desktop
+pacman -S lightdm-gtk-greeter grub efibootmgr os-prober base-devel xorg xfce4 xfce4-goodies networkmanager network-manager-applet openrc-desktop
+pacman -S lightdm-gtk-greeter grub efibootmgr os-prober base-devel xorg xfce4 xfce4-goodies networkmanager network-manager-applet openrc-desktop
+pacman -S networkmanager-openrc 
+rc-update add NetworkManager default
+rc-update add consolekit default
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --recheck
+nano /etc/default/grub
+grub-mkconfig -o /boot/grub/grub.cfg
+rc-status --all
+rc-status --list
+rc-status --all
+exit
+rc-update add lightdm default
+rc-update add lightdm default
+ping 8.8.4.4
+pacman -Syu
+pacman -S lightdm-gtk-greeter 
+rc-service default
+rc-service lightdm
+nano /etc/conf.d/xdm
+rc-update add xdm default
+mkdir /boot/efi/EFI/BOOT
+cp -v /boot/efi/EFI/arch/grubx64.efi /boot/efi/EFI/BOOT/BOOTX64.EFI
+grub-mkconfig -o /boot/grub/grub.cfg
+grub-mkconfig -o /boot/grub/grub.cfg
+reboot
+pacman -S virtualbox-guest-utils-openrc 
+rc-update add vboxservice default
+touch /etc/sysctl.conf
+rc-status --all
+pacman -Sy openrc-base openrc-desktop alsa-utils-openrc bluez-openrc openssh-openrc fuse-openrc gpm-openrc displaymanager-openrc ntp-openrc haveged-openrc wpa_supplicant-openrc networkmanager-openrc php-fpm-openrc postgresql-openrc nvidia-utils-openrc lighttpd-openrc lm_sensors-openrc iptables-openrc cups-openrc mysql-openrc acpid-openrc consolekit-openrc avahi-openrc eudev-openrc eudev-systemdcompat  upower-pm-utils xfce4-power-manager-upower-y
+pacman -Sy openrc-base openrc-desktop alsa-utils-openrc bluez-openrc openssh-openrc fuse-openrc gpm-openrc displaymanager-openrc ntp-openrc haveged-openrc wpa_supplicant-openrc networkmanager-openrc php-fpm-openrc postgresql-openrc nvidia-utils-openrc lighttpd-openrc lm_sensors-openrc iptables-openrc cups-openrc mysql-openrc acpid-openrc consolekit-openrc avahi-openrc eudev-openrc eudev-systemdcompat  upower-pm-utils xfce4-power-manager-upower -y
+for name in {cronie,dbus,dhcpcd,nscd,ftpd,lvm,mdadm,alsasound,bluetooth,sshd,fuse,gpm,xdm,consolekit,acpid,mysql,cupsd,iptables,sensord,fancontrol,lm_sensors,lighttpd,nvidia-smid,postgresql,php-fpm,NetworkManager,wpa_supplicant,haveged,avahi-dnsconfd};do sudo rc-update add "$name" default;done
+for name in {device-mapper,dmeventd,dmcrypt};do sudo rc-update add "$name" boot;done
+rc-status --all
+rc-service --list
+useradd -m -G wheel,video,audio,power,disk,storage,optical,lp,scanner -s /bin/bash abhisek -c "Abhisek Mukherjee"
+passwd
+passwd abhisek
+pacman -S udisks2-nosystemd dosfstools mtools ntfs-3g parted gparted exfat-utils fuse-exfat android-tools gpart btrfs-progs f2fs-tools xdg-user-dirs xdg-user-dirs-gtk gvfs-nosystemd reiserfsprogs testdisk
+pacman -S gvfs-smb gvfs-mtp 
+pacman -S libreoffice firefox chromium flashplugin mplayer smplayer vlc icedtea-web audacity handbrake epdfview gwget aria2 vdpauinfo mesa-vdpau libva-intel-driver gst-libav gst-plugins-good libdvdcss zip unzip xz unrar lzop cpio p7zip xarchiver gnome-keyring xsane
+pacman -S libreoffice firefox chromium flashplugin mplayer smplayer vlc icedtea-web audacity handbrake epdfview gwget aria2 vdpauinfo mesa-vdpau libva-intel-driver gst-libav gst-plugins-good libdvdcss zip unzip xz unrar lzop cpio p7zip xarchiver gnome-keyring xsane
+pacman -S libreoffice firefox chromium flashplugin mplayer smplayer vlc icedtea-web audacity handbrake epdfview gwget aria2 vdpauinfo mesa-vdpau libva-intel-driver gst-libav gst-plugins-good libdvdcss zip unzip xz unrar lzop cpio p7zip xarchiver gnome-keyring xsane
+pacman -S libreoffice firefox chromium flashplugin mplayer smplayer vlc icedtea-web audacity handbrake epdfview gwget aria2 vdpauinfo mesa-vdpau libva-intel-driver gst-libav gst-plugins-good libdvdcss zip unzip xz unrar lzop cpio p7zip xarchiver gnome-keyring xsane
+pacman -S libreoffice firefox chromium flashplugin mplayer smplayer vlc icedtea-web audacity handbrake epdfview gwget aria2 vdpauinfo mesa-vdpau libva-intel-driver gst-libav gst-plugins-good libdvdcss zip unzip xz unrar lzop cpio p7zip xarchiver gnome-keyring xsane
+pacman -S wireshark-gtk nmap pulseaudio pavucontrol paprefs alsa-utils alsa-tools pulseaudio-alsa bluez-openrc bluez-utils bluez-plugins bluez-firmware bluez-cups bluez-hid2hci
+pacman -S wireshark-gtk nmap pulseaudio pavucontrol paprefs alsa-utils alsa-tools pulseaudio-alsa bluez-openrc bluez-utils bluez-plugins bluez-firmware bluez-cups bluez-hid2hci
+rc-update add bluetooth default
+pacman -Ssq pulseaudio
+pacman -S libpulse-nosystemd 
+rc-status --all
+rc-status --all
+rc-service --list
+for name in {cronie,dbus,dhcpcd,nscd,ftpd,lvm,mdadm,alsasound,bluetooth,sshd,fuse,gpm,xdm,consolekit,acpid,mysql,cupsd,iptables,sensord,fancontrol,lm_sensors,lighttpd,nvidia-smid,postgresql,php-fpm,NetworkManager,wpa_supplicant,haveged,avahi-dnsconfd};do sudo rc-update add "$name" default;done
+for name in {device-mapper,dmeventd,dmcrypt};do sudo rc-update add "$name" boot;done
+for name in {cronie,dbus,dhcpcd,nscd,ftpd,lvm,mdadm,alsasound,bluetooth,sshd,fuse,gpm,xdm,consolekit,acpid,mysql,cupsd,iptables,sensord,fancontrol,lm_sensors,lighttpd,nvidia-smid,postgresql,php-fpm,NetworkManager,wpa_supplicant,haveged,avahi-dnsconfd,hwclock,fsck,numlock,sysctl};do sudo rc-update add "$name" default;done
+for name in {device-mapper,dmeventd,dmcrypt};do sudo rc-update add "$name" boot;done
+rc-service --list
+rc-status --all
+ll /media
+ls -l /
+mkdir /media
+ls -l /
+exit
