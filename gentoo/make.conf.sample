@@ -9,49 +9,55 @@ CHOST="x86_64-pc-linux-gnu"
 
 # Modularize Sections based on core meta package sets
 # USE Flags/Variables Declerations
-GRUB_PLATFORMS="efi-64 pc"
-NOUSE="-libav -bindist"
-XFCE_PLUGINS="brightness clock trash power"
-APPS="branding infinality gnome gtk icu python"
-CODECS="ffmpeg vdpau nvidia"
-SYS="udev sqlite pulseaudio networkmanager lm_sensors dvd cdr usb"
-CPU_FLAGS_X86="mmx mmxext popcnt sse sse2 sse3 sse4_1 sse4_2 ssse3"
-USE="${SYS} ${NOUSE} ${APPS} ${CODECS}"
+NOUSE=""
+USE1=""
+USE2=""
+SYS=""
+CPU_FLAGS_X86=""
+USE="${SYS} ${NOUSE} ${USE1} ${USE2}"
 
 # Visit https://wiki.gentoo.org/wiki/Handbook:AMD64/Working/Features;
+# Or Visit https://dev.gentoo.org/~zmedico/portage/doc/man/make.conf.5.html for a comprehensive list
 # Or run the following for a more complete set $$ emerge --info | grep ^FEATURES= 
 # Portage Features
-FEATURES="candy parallel-fetch compress-build-logs"
-CONFIG_PROTECT="/etc/rc.conf /etc/conf.d/keymaps /etc/conf.d/consolefont /etc/conf.d/hwclock /etc/pulse/daemon.conf /etc/pulse/default.conf /etc/conf.d/xdm" 
+FEATURES=""
+CONFIG_PROTECT="" 
 
 # Based on specific hardware
 # Hardware Stuff/Xorg
-VIDEO_CARDS="nvidia fbdev"
-ALSA_CARDS="hd_intel"
-INPUT_DEVICES="keyboard mouse evdev"
+VIDEO_CARDS=""
+ALSA_CARDS=""
+INPUT_DEVICES=""
 
+# To use stable; simply use "amd64"
 # To use unstable; simply use "~amd64"
-# Gentoo Branch Main
-ACCEPT_KEYWORDS="amd64"
+# Gentoo Branch
+ACCEPT_KEYWORDS=""
 
-# make parallel
 # Make options
 MAKEOPTS="-j9"
 
+# Visit; https://dev.gentoo.org/~zmedico/portage/doc/man/make.conf.5.html for a listing
 # Language & Licenses
-ACCEPT_LISENCE="* @EULA"
-LINGUAS="en"
+ACCEPT_LISENCE=""
+LINGUAS=""
 
+# Gentoo Defaults
 # Directories
 PORTDIR="/usr/portage"
 DISTDIR="${PORTDIR}/distfiles"
 PKGDIR="${PORTDIR}/packages"
 
 # Turn on logging - see http://gentoo-en.vfose.ru/wiki/Gentoo_maintenance.
-PORTAGE_ELOG_CLASSES="log warn error" 
-PORTAGE_ELOG_SYSTEM="save_summary:log,warn,error echo" 
+PORTAGE_ELOG_CLASSES="" 
+PORTAGE_ELOG_SYSTEM="" 
 # Logs go to /var/log/portage/elog by default - view them with elogviewer.
 
 # Mirrors & Sources
-source /var/lib/layman/make.conf
 GENTOO_MIRRORS="http://gentoo.osuosl.org/"
+
+# Layman Section
+source /var/lib/layman/make.conf
+# See https://wiki.gentoo.org/wiki/Layman ; for details
+
+# EOF
