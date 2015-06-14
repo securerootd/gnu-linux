@@ -6,7 +6,6 @@ debian/*.zip
 debian/*.deb
 debian/*.tar.gz
 fedora/*.rpm
-gentoo/*
 kernel/*.xz
 #kernel/!(config-*)
 *.run

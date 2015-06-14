@@ -1,0 +1,82 @@
+# Gentoo Linux Todo, Budhaditya Saha
+# 2015
+# v1.0
+
+
+{{----Portage & Emerge Stuff-----}}
+
+# Make.conf --
+Keep as minimal as possible. Huge list of global use flags will result in huge conflicts.
+
+# package.use
+Per package basis use flags. Also mostly minimal to prevent gnome stuff.
+
+# package.keywords
+Per package ~amd64 import from unstable branch. Not prudent to set globally.
+
+# package.lisence
+Limited use, only for Google-Chrome and Sublime-Text.
+
+# zz-template
+These files are empty and are created by me, considered best practice. 
+emerge might ask to overwrite automatically use and keywords. it will use the last file (i.e) zz-template to write in the required stuff,
+after that you can easily merge the changes into your desired filename.
+
+# Temporary use flags.
+USE="x..." emerge -av "pname"
+
+## Tools --
+
+# CPU Flags
+
+emerge -av app-portage/cpuinfo2cpuflags
+$cpuinfo2cpuflags ># then copy and paste the ouput in the make.conf
+
+# Genkernel stuff
+genkernel --menuconfig all
+
+# eselect.
+# main
+
+eselect profile list
+-->
+eselect profile set 'n'
+"default/linux/amd64/13.0/desktop *"
+
+equery < part of gentoolkit
+genlop < see compile times in human readable format "-tH" or current emerge status "-c"
+eix < install this always, best tool to see all versions of avaiable packages and flags. ( First run -> eix-sync then keep running eix-update)
+
+## See progress of merges and fetch
+
+$ tail -f /var/log/emerge-fetch.log
+$ tail -f /var/log/emerge.log
+$ tail -f /var/log/genkernel.log
+
+-----------------------------------------------------------------------|
+** Install & Upgrade Practices **
+
+emerge -av "tree/pname"
+emerge --sync
+emerge -uav "tree/pname"
+
+# Global world update. (Run once a week after you have synced emerge portage tree or you've changed global use flags.)
+emerge -avuDN @world  < Have some coffee ;) >
+
+# depclean
+emerge -av --depclean  ## Don't run often. not a suitable command.
+
+# uninstall 
+emerge -Cav "tree/pname"
+------------------------------------------------------------------------|
+
+{{----PPA or Overlays----}}
+
+emerge -av app-portage/layman
+echo "source /var/lib/layman/make.conf" > /etc/portage/make.conf
+
+<*Usgage*>
+
+layman -L <list all overlays available
+layman -a "name" < add an overlay
+layman -l < list all local overlays
