@@ -1,10 +1,13 @@
 # Build setup as of <June'15>
 
-# C and C++ Compiler Flags
+#C and C++ Compiler Flags
+#Sane Defaults
+# Details of optimization options available at: https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html
 CFLAGS="-march=native -O2 -pipe"
 CXXFLAGS="${CFLAGS}"
 CHOST="x86_64-pc-linux-gnu"
 
+# Modularize Sections based on core meta package sets
 # USE Flags/Variables Declerations
 GRUB_PLATFORMS="efi-64 pc"
 NOUSE="-libav -bindist"
@@ -15,18 +18,23 @@ SYS="udev sqlite pulseaudio networkmanager lm_sensors dvd cdr usb"
 CPU_FLAGS_X86="mmx mmxext popcnt sse sse2 sse3 sse4_1 sse4_2 ssse3"
 USE="${SYS} ${NOUSE} ${APPS} ${CODECS}"
 
+# Visit https://wiki.gentoo.org/wiki/Handbook:AMD64/Working/Features;
+# Or run the following for a more complete set $$ emerge --info | grep ^FEATURES= 
 # Portage Features
 FEATURES="candy parallel-fetch compress-build-logs"
 CONFIG_PROTECT="/etc/rc.conf /etc/conf.d/keymaps /etc/conf.d/consolefont /etc/conf.d/hwclock /etc/pulse/daemon.conf /etc/pulse/default.conf /etc/conf.d/xdm" 
 
+# Based on specific hardware
 # Hardware Stuff/Xorg
 VIDEO_CARDS="nvidia fbdev"
 ALSA_CARDS="hd_intel"
 INPUT_DEVICES="keyboard mouse evdev"
 
+# To use unstable; simply use "~amd64"
 # Gentoo Branch Main
 ACCEPT_KEYWORDS="amd64"
 
+# make parallel
 # Make options
 MAKEOPTS="-j9"
 
