@@ -1,24 +1,11 @@
-# Debian Global Mirror
-deb http://httpredir.debian.org/debian/ jessie main contrib non-free
-#deb-src http://httpredir.debian.org/debian/ jessie main contrib non-free
+deb http://httpredir.debian.org/debian stretch main contrib non-free
+deb http://httpredir.debian.org/debian stretch-updates main contrib non-free
 
-deb http://httpredir.debian.org/debian/ jessie-updates main contrib non-free
-#deb-src http://httpredir.debian.org/debian/ jessie-updates main contrib non-free
+deb http://security.debian.org/ stretch/updates main contrib non-free
 
-deb http://httpredir.debian.org/debian/ jessie-backports main contrib non-free
-#deb-src http://httpredir.debian.org/debian/ jessie-backports main contrib non-free
+deb http://www.deb-multimedia.org/ stretch main non-free
 
-# Debian Security
-deb http://security.debian.org/ jessie/updates main contrib non-free
-#deb-src http://security.debian.org/ jessie/updates main contrib non-free
+deb https://tel.red/repos/debian stretch non-free
 
-# Deb Multimedia
-deb http://www.deb-multimedia.org/ jessie main non-free
-#deb-src http://www.deb-multimedia.org/ jessie main non-free
-
-# XFCE 4.12 Mepis 15
-deb http://main.mepis-deb.org/mx/repo/ mx15 main
-
-# LMDE for Jessie Firefox
-deb http://packages.linuxmint.com debian import
-
+deb http://ppa.launchpad.net/no1wantdthisname/ppa/ubuntu xenial main
+deb http://ppa.launchpad.net/numix/ppa/ubuntu yakkety main
