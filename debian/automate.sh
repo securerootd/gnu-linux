@@ -50,7 +50,8 @@ apt install ssh cowsay fortunes pv zsh aria2 conky-all -y
 # install games
 apt install aisleriot gnome-chess gnome-sudoku gnome-mahjongg gnome-mines supertux supertuxkart -y
 # install various tools
-apt install exfat-utils exfat-fuse hfsplus hfsutils hfsprogs testdisk adb fastboot gddrescue hddtemp hdparm smartmontools fonts-indic fonts-inconsolata fonts-ubuntu-title aptitude apt-listbugs wireshark -y
+apt install exfat-utils exfat-fuse hfsplus hfsutils hfsprogs testdisk adb fastboot gddrescue hddtemp hdparm smartmontools dconf-editor dconf-cli -y
+apt install fonts-indic fonts-inconsolata fonts-ubuntu-title aptitude apt-listbugs wireshark -y
 # install android development tools & kernel build options
 #apt-get install openjdk-8-jdk bison g++ gcc clang llvm git subversion gperf libxml2-utils subversion build-essential kernel-package kernel-wedge libncurses5-dev ccache libgtk2.0-dev libglib2.0-dev libglade2-dev linux-headers-amd64 android-sdk-build-tools -y
 # Install xfce required extras
