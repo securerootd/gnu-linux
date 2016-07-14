@@ -1,0 +1,63 @@
+# Build setup as of <June'15>
+
+#C and C++ Compiler Flags
+#Sane Defaults
+# Details of optimization options available at: https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html
+CFLAGS="-march=native -O2 -pipe"
+CXXFLAGS="${CFLAGS}"
+CHOST="x86_64-pc-linux-gnu"
+
+# Modularize Sections based on core meta package sets
+# USE Flags/Variables Declerations
+NOUSE=""
+USE1=""
+USE2=""
+SYS=""
+CPU_FLAGS_X86=""
+USE="${SYS} ${NOUSE} ${USE1} ${USE2}"
+
+# Visit https://wiki.gentoo.org/wiki/Handbook:AMD64/Working/Features;
+# Or Visit https://dev.gentoo.org/~zmedico/portage/doc/man/make.conf.5.html for a comprehensive list
+# Or run the following for a more complete set $$ emerge --info | grep ^FEATURES= 
+# Portage Features
+FEATURES=""
+CONFIG_PROTECT="" 
+
+# Based on specific hardware
+# Hardware Stuff/Xorg
+VIDEO_CARDS=""
+ALSA_CARDS=""
+INPUT_DEVICES=""
+
+# To use stable; simply use "amd64"
+# To use unstable; simply use "~amd64"
+# Gentoo Branch
+ACCEPT_KEYWORDS=""
+
+# Make options
+MAKEOPTS="-j9"
+
+# Visit; https://dev.gentoo.org/~zmedico/portage/doc/man/make.conf.5.html for a listing
+# Language & Licenses
+ACCEPT_LISENCE=""
+LINGUAS=""
+
+# Gentoo Defaults
+# Directories
+PORTDIR="/usr/portage"
+DISTDIR="${PORTDIR}/distfiles"
+PKGDIR="${PORTDIR}/packages"
+
+# Turn on logging - see http://gentoo-en.vfose.ru/wiki/Gentoo_maintenance.
+PORTAGE_ELOG_CLASSES="" 
+PORTAGE_ELOG_SYSTEM="" 
+# Logs go to /var/log/portage/elog by default - view them with elogviewer.
+
+# Mirrors & Sources
+GENTOO_MIRRORS="http://gentoo.osuosl.org/"
+
+# Layman Section
+source /var/lib/layman/make.conf
+# See https://wiki.gentoo.org/wiki/Layman ; for details
+
+# EOF
