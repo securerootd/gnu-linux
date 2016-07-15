@@ -30,16 +30,12 @@ dpkg --add-architecture i386
 dpkg-reconfigure locales
 # MX15 repo for XFCE 4.12
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 14E225A0 
-# Add infinality ppa
-echo "deb http://ppa.launchpad.net/no1wantdthisname/ppa/ubuntu vivid main" > /etc/apt/sources.list.d/infinality.list
-echo "#deb-src http://ppa.launchpad.net/no1wantdthisname/ppa/ubuntu vivid main" >> /etc/apt/sources.list.d/infinality.list
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E985B27B
 # Add deb-multimedia keyring
 apt-get update && apt-get install --allow-unauthenticated -y deb-multimedia-keyring
 # upgrade
 apt-get update && apt-get dist-upgrade -y
 # install desktop
-apt-get install task-xfce-desktop -y
+apt install task-xfce-desktop gtk3-engines-xfce firefox-esr evolution-ews dconf-cli dconf-editor -y
 # install firmware and essentials
 apt install firmware-linux-nonfree firmware-misc-nonfree firmware-realtek firmware-iwlwifi firmware-atheros intel-microcode -y
 apt install mplayer smplayer vlc audacity handbrake-gtk gparted qmmp qbittorrent browser-plugin-vlc browser-plugin-freshplayer-pepperflash icedtea-plugin qt4-qtconfig command-not-found libreoffice-writer libreoffice-calc libreoffice-impress libreoffice-math python-vte fontconfig-infinality vim-gtk geany -y
