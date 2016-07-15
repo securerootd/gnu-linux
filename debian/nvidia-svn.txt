@@ -1,0 +1,49 @@
+
+Prepare
+-------
+
+sudo apt install subversion svn-buildpackage
+sudo apt build-dep nvidia-graphics-drivers
+
+
+Build from SVN
+--------------
+
+svn co svn://anonscm.debian.org/pkg-nvidia/packages/nvidia-graphics-drivers/branches/367
+cd 367
+debian/rules get-orig-source
+mkdir ../tarballs
+mv nvidia-graphics-drivers* ../tarballs
+svn-buildpackage --svn-ignore -us -uc -rfakeroot
+svn-buildpackage --svn-ignore --svn-arch=i386 -us -uc -rfakeroot
+
+
+List of packages to install from SVN:
+-------------------------------------
+libcuda1 
+libcuda1:i386 
+libcuda1-i386:i386 
+libegl1-nvidia
+libgl1-nvidia-glx 
+libgl1-nvidia-glx:i386
+libgl1-nvidia-glx-i386:i386 
+libgles1-nvidia 
+libgles2-nvidia
+libnvidia-compiler 
+libnvidia-eglcore
+libnvidia-ml1 
+libnvidia-ml1:i386 
+nvidia-driver-bin 
+nvidia-installer-cleanup 
+nvidia-kernel-common
+nvidia-kernel-dkms 
+nvidia-kernel-support 
+nvidia-legacy-check 
+nvidia-modprobe
+nvidia-opencl-common 
+nvidia-persistenced 
+nvidia-smi:i386 
+nvidia-support
+nvidia-vdpau-driver 
+xserver-xorg-video-nvidia
+

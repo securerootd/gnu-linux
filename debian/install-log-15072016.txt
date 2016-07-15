@@ -1,0 +1,76 @@
+cd gnu-linux/debian/
+mv /etc/bash.bashrc /etc/bash.bashrc.bak
+cp -v bash.bashrc /etc/
+cp -v ../bashrc ~/.bashrc
+cp -v ../zshrc ~/.zshrc
+cp -v ../bashrc /etc/skel/.bashrc
+cp -v ../zshrc /etc/skel/.zshrc
+exit
+ls -l
+apt install task-xfce-desktop gtk3-engines-xfce firefox-esr evolution-ews dconf-cli dconf-editor -y
+dpkg --configure -a
+apt-get check
+apt -f install
+apt install task-xfce-desktop gtk3-engines-xfce firefox-esr evolution-ews dconf-cli dconf-editor -y
+apt-get check
+apt -f install
+apt install task-xfce-desktop gtk3-engines-xfce firefox-esr evolution-ews dconf-cli dconf-editor -y
+apt install exfat-utils exfat-fuse hfsplus hfsutils hfsprogs testdisk adb fastboot gddrescue smartmontools cowsay fortunes pv zsh aria2 conky-all fonts-indic fonts-inconsolata fonts-ubuntu-title aptitude apt-listbugs wireshark mplayer smplayer vlc audacity handbrake-gtk gparted qmmp qbittorrent browser-plugin-vlc browser-plugin-freshplayer-pepperflash icedtea-plugin qt4-qtconfig command-not-foundpython-vte fontconfig-infinality vim-gtk geany
+apt install exfat-utils exfat-fuse hfsplus hfsutils hfsprogs testdisk adb fastboot gddrescue smartmontools cowsay fortunes pv zsh aria2 conky-all fonts-indic fonts-inconsolata fonts-ubuntu-title aptitude apt-listbugs wireshark mplayer smplayer vlc audacity handbrake-gtk gparted qmmp qbittorrent browser-plugin-vlc browser-plugin-freshplayer-pepperflash icedtea-plugin qt4-qtconfig command-not-found python-vte fontconfig-infinality vim-gtk geany
+cd gnu-linux/debian/
+apt install exfat-utils exfat-fuse hfsplus hfsutils hfsprogs testdisk adb fastboot gddrescue smartmontools cowsay fortunes pv zsh aria2 conky-all fonts-indic fonts-inconsolata fonts-ubuntu-title aptitude apt-listbugs wireshark mplayer smplayer vlc audacity handbrake-gtk gparted qmmp qbittorrent browser-plugin-vlc browser-plugin-freshplayer-pepperflash icedtea-plugin qt4-qtconfig command-not-found python-vte fontconfig-infinality vim-gtk geany libtxc-dxtn0 libtxc-dxtn0:i386 steam gksu sudo hexchat vainfo sysinfo xdg-user-dirs xdg-user-dirs-gtk faenza-icon-theme human-icon-theme lxde-icon-theme numlockx sound-theme-freedesktop
+mkdir /usr/lib/systemd/system
+mkdir /etc/X11/xorg.conf.d
+mkdir /etc/lightdm/lightdm.conf.d
+mv /etc/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf.bak
+cp -v lightdm-gtk-greeter.conf /etc/lightdm/
+cp -v 01_abhis3k.conf /etc/lightdm/lightdm.conf.d/
+tar xvfz ../redhat-icons.tar.gz -C /usr/share/icons
+update-alternatives --display x-cursor-theme 
+update-alternatives --install /usr/share/icons/default/index.theme x-cursor-theme /usr/share/icons/Bluecurve-FC4/cursor.theme 8000
+update-alternatives --install /usr/share/icons/default/index.theme x-cursor-theme /usr/share/icons/Bluecurve-FC6/cursor.theme 6000
+update-alternatives --install /usr/share/icons/default/index.theme x-cursor-theme /usr/share/icons/Bluecurve-inverse-FC4/cursor.theme 4000
+update-alternatives --install /usr/share/icons/default/index.theme x-cursor-theme /usr/share/icons/Bluecurve-inverse-FC6/cursor.theme 2000
+update-alternatives --display x-cursor-theme 
+tar xvfz ../osx-icons.tar.gz -C /usr/share/icons
+tar xvfz ../elementary-xfce.tar.gz -C /usr/share/icons
+tar xvfz ../vibrancy-icons.tar.gz -C /usr/share/icons
+tar xvfz ../restricted-fonts.tar.gz -C /usr/share/fonts/truetype
+for dir in /usr/share/icons/*; do   test -d "$dir" || continue;   update-icon-caches "$dir"; done
+for dir in /usr/share/fonts/truetype/*; do   test -d "$dir" || continue;   cd "$dir";   mkfontscale .;   mkfontdir .; done
+fc-cache -fv
+exit
+apt install exfat-utils exfat-fuse hfsplus hfsutils hfsprogs testdisk adb fastboot gddrescue smartmontools cowsay fortunes pv zsh aria2 conky-all fonts-indic fonts-inconsolata fonts-ubuntu-title aptitude apt-listbugs wireshark mplayer smplayer vlc audacity handbrake-gtk gparted qmmp qbittorrent browser-plugin-vlc browser-plugin-freshplayer-pepperflash icedtea-plugin qt4-qtconfig command-not-found python-vte fontconfig-infinality vim-gtk geany libtxc-dxtn0 libtxc-dxtn0:i386 steam gksu sudo hexchat vainfo sysinfo xdg-user-dirs xdg-user-dirs-gtk faenza-icon-theme human-icon-theme lxde-icon-theme numlockx sound-theme-freedesktop -y
+apt update && apt full-upgrade 
+apt install synaptic 
+apt install synaptic gdebi
+apt install synaptic gdebi apt-xapian-index apt-file 
+apt install synaptic gdebi apt-xapian-index 
+bash /etc/fonts/infinality/infctl.sh setstyle
+apt search icon-theme
+apt install numix-icon-theme-circle lxde-icon-theme faba-icon-theme nvidia-settings nvidia-opencl-icd nvidia-detect nvidia-alternative nvidia-libopencl1 nvidia-driver
+nano /etc/X11/xorg.conf.d/20-nvidia.conf
+nano /etc/X11/xorg.conf.d/30-screen.conf
+nano /etc/X11/xorg.conf.d/50-synaptics.conf
+apt install openjdk-8-jdk bison g++ gcc clang llvm git subversion gperf libxml2-utils subversion build-essential kernel-package kernel-wedge libncurses5-dev ccache libgtk2.0-dev libglib2.0-dev libglade2-dev linux-headers-amd64 android-sdk-build-tools
+apt install openjdk-8-jdk bison g++ gcc clang llvm git subversion gperf libxml2-utils subversion build-essential kernel-package kernel-wedge libncurses5-dev ccache libgtk2.0-dev libglib2.0-dev libglade2-dev linux-headers-amd64
+update-initramfs -vu
+update-grub
+for dir in /usr/share/icons/*; do   test -d "$dir" || continue;   update-icon-caches "$dir"; done
+for dir in /usr/share/fonts/truetype/*; do   test -d "$dir" || continue;   cd "$dir";   mkfontscale .;   mkfontdir .; done
+fc-cache -fv
+exit
+ls -l *.deb
+dpkg  -i ctxusb_2.6.344519_amd64.deb davmail_4.7.2-2427-1_all.deb google-chrome-stable_current_amd64.deb google-talkplugin_current_amd64.deb icaclient_13.3.0.344519_amd64.deb noip2_2.1.9-3_amd64.deb spideroakone_6.1.4_amd64.deb sublime-text_build-3114_amd64.deb 
+apt -fy install
+nano ~/.bash_history 
+apt install darktable rawtherapee audacious gjay clamtk pinta
+apt-get check
+apt -fy install
+apt update && apt full-upgrade 
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 573E3D1C51AE1B3D
+apt search tor
+apt update && apt full-upgrade 
+apt install apt-transport-tor
+apt update && apt full-upgrade 
+exit
