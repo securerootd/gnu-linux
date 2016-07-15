@@ -26,6 +26,7 @@ The driver options below can be included for increased performance:
 
 /etc/X11/xorg.conf.d/20-nvidia.conf
 
+
 Section "Device"
     Identifier "eVGA GTX 950"
     Driver "nvidia"
@@ -47,4 +48,27 @@ If different values are reported, these commands can be added to ~/.xsession for
 
 nvidia-settings -a InitialPixmapPlacement=2
 nvidia-setttings -a GlyphCache=1
+
+-----------------------------------------------------------------------
+Extra References
+
+ apt install numix-icon-theme-circle lxde-icon-theme faba-icon-theme nvidia-settings nvidia-opencl-icd nvidia-detect nvidia-alternative nvidia-libopencl1 nvidia-driver
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+lxde-icon-theme is already the newest version (0.5.1-1).
+The following additional packages will be installed:
+  dkms fakeroot gcc gcc-5 glx-alternative-mesa glx-alternative-nvidia
+  glx-diversions libasan2 libatomic1 libc-dev-bin libc6-dev libcc1-0
+  libcilkrts5 libcuda1 libcuda1:i386 libcuda1-i386:i386 libegl1-nvidia
+  libfakeroot libgcc-5-dev libgl1-nvidia-glx libgl1-nvidia-glx:i386
+  libgl1-nvidia-glx-i386:i386 libgles1-nvidia libgles2-nvidia libitm1
+  libjansson4 liblsan0 libmpx0 libnvidia-compiler libnvidia-eglcore
+  libnvidia-ml1 libnvidia-ml1:i386 libtsan0 libubsan0 linux-compiler-gcc-5-x86
+  linux-headers-4.6.0-1-amd64 linux-headers-4.6.0-1-common linux-headers-amd64
+  linux-kbuild-4.6 linux-libc-dev manpages-dev numix-icon-theme
+  nvidia-driver-bin nvidia-installer-cleanup nvidia-kernel-common
+  nvidia-kernel-dkms nvidia-kernel-support nvidia-legacy-check nvidia-modprobe
+  nvidia-opencl-common nvidia-persistenced nvidia-smi:i386 nvidia-support
+  nvidia-vdpau-driver pkg-config update-glx xserver-xorg-video-nvidia
 
