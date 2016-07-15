@@ -27,12 +27,13 @@ The driver options below can be included for increased performance:
 /etc/X11/xorg.conf.d/20-nvidia.conf
 
 Section "Device"
-    Identifier "GTS 450"
+    Identifier "eVGA GTX 950"
     Driver "nvidia"
     Option "NoLogo" "false"
     Option "RenderAccel" "true"
     Option "TripleBuffer" "true"
     Option "MigrationHeuristic" "greedy"
+    Option "Coolbits" "5"
 EndSection
 
 Iceweasel / Icedove
