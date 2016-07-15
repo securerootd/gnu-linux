@@ -41,7 +41,7 @@ apt-get update && apt-get dist-upgrade -y
 # install desktop
 apt-get install task-xfce-desktop -y
 # install firmware and essentials
-apt install firmware-linux-nonfree firmware-ralink firmware-realtek firmware-iwlwifi firmware-atheros intel-microcode -y
+apt install firmware-linux-nonfree firmware-misc-nonfree firmware-realtek firmware-iwlwifi firmware-atheros intel-microcode -y
 apt install mplayer smplayer vlc audacity handbrake-gtk gparted qmmp qbittorrent browser-plugin-vlc browser-plugin-freshplayer-pepperflash icedtea-plugin qt4-qtconfig command-not-found libreoffice-writer libreoffice-calc libreoffice-impress libreoffice-math python-vte fontconfig-infinality vim-gtk geany -y
 # Configure fonts
 bash /etc/fonts/infinality/infctl.sh setstyle
