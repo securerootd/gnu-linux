@@ -34,7 +34,8 @@ apt install browser-plugin-vlc browser-plugin-freshplayer-pepperflash icedtea-pl
 apt install libreoffice-writer libreoffice-calc libreoffice-impress libreoffice-math -y
 # install various tools
 apt install exfat-utils exfat-fuse hfsplus hfsutils hfsprogs testdisk adb fastboot gddrescue hddtemp hdparm smartmontools gparted -y
-apt install fontconfig-infinality fonts-droid-fallback fonts-noto fonts-roboto fonts-indic fonts-inconsolata fonts-ubuntu-title -y
+apt install fontconfig-infinality font-manager \
+            fonts-droid-fallback fonts-noto fonts-roboto fonts-indic fonts-inconsolata fonts-ubuntu-title -y
 # Configure fonts
 bash /etc/fonts/infinality/infctl.sh setstyle
 # install essential system tools
