@@ -39,13 +39,18 @@ apt install fontconfig-infinality fonts-droid-fallback fonts-noto fonts-roboto f
 bash /etc/fonts/infinality/infctl.sh setstyle
 # install essential system tools
 apt install ssh cowsay fortunes pv zsh aria2 conky-all python-vte vim-gtk geany aptitude apt-listbugs gksu sudo numlockx wireshark -y
+# install nvidia stuffs
+apt install nvidia-settings nvidia-opencl-icd nvidia-detect nvidia-alternative nvidia-libopencl1 nvidia-driver -y
+nano /etc/X11/xorg.conf.d/20-nvidia.conf
+nano /etc/X11/xorg.conf.d/30-screen.conf
+nano /etc/X11/xorg.conf.d/50-synaptics.conf
 # install games
 apt install aisleriot gnome-chess gnome-sudoku gnome-mahjongg gnome-mines supertux supertuxkart -y
 # install android development tools & kernel build options
 #apt-get install openjdk-8-jdk bison g++ gcc clang llvm git subversion gperf libxml2-utils subversion build-essential kernel-package kernel-wedge libncurses5-dev ccache libgtk2.0-dev libglib2.0-dev libglade2-dev linux-headers-amd64 android-sdk-build-tools -y
 # Install xfce required extras
 apt install gksu sudo gvfs-backends gvfs-fuse gtk2-engines-murrine gtk2-engines-pixbuf  -y
-apt install libtxc-dxtn0 libtxc-dxtn0:i386 steam hexchat vainfo xdg-user-dirs-gtk -y
+apt install libtxc-dxtn0 libtxc-dxtn0:i386 steam hexchat vainfo xdg-user-dirs-gtk lightdm-gtk-greeter-settings -y
 apt install numix-icon-theme-circle lxde-icon-theme faba-icon-theme faenza-icon-theme \
             human-icon-theme lxde-icon-theme sound-theme-freedesktop -y
 # Install extra Designer Mode
