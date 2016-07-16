@@ -47,3 +47,11 @@ nvidia-support
 nvidia-vdpau-driver 
 xserver-xorg-video-nvidia
 
+
+Install command
+---------------
+dpkg -i *_amd64.deb
+dpkg -i libglvnd-nvidia_367.27-1_i386.deb libgl1-nvidia-glx-i386_367.27-1_i386.deb libgl1-nvidia-glx_367.27-1_i386.deb libglx0-nvidia_367.27-1_i386.deb libcuda1-i386_367.27-1_i386.deb libcuda1_367.27-1_i386.deb  libnvidia-ml1_367.27-1_i386.deb nvidia-smi_367.27-1_i386.deb libglx0-nvidia_367.27-1_i386.deb libglx-nvidia0_367.27-1_i386.deb libgles1-glvnd-nvidia_367.27-1_i386.deb libgles2-glvnd-nvidia_367.27-1_i386.deb libglx0-nvidia_367.27-1_i386.deb
+
+
+
