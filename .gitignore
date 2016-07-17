@@ -1,3 +1,4 @@
+*.tar.xz
 *.tar.gz
 *.zip
 arch/*.tar.gz
@@ -5,6 +6,7 @@ art/*
 debian/*.zip
 debian/*.deb
 debian/*.tar.gz
+debian/*.tar.xz
 fedora/*.rpm
 kernel/*.xz
 #kernel/!(config-*)

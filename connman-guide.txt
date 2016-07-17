@@ -1,0 +1,11 @@
+ 
+ip link show up
+connmanctl technologies
+connmanctl enable wifi
+connmanctl scan wifi
+connmanctl
+connmanctl> scan wifi
+connmanctl> services
+connmanctl> agent on
+connmanctl> connect wifi_<name>
+connmanctl> quit
