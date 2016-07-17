@@ -98,9 +98,9 @@ alias make='make -j4'
 # export C flags
 export CFLAGS="-march=native -mtune=native -msse4.2 -mavx -msse2avx -O2"
 export CXXFLAGS="$CFLAGS"
-export CC="ccache gcc"
-export CXX="ccache g++"
-export PATH="/usr/lib/ccache:$PATH"
+#export CC="ccache gcc"
+#export CXX="ccache g++"
+#export PATH="/usr/lib/ccache:$PATH"
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
