@@ -1,0 +1,42 @@
+timedatectl set-ntp true
+exit
+pacman -Syu
+pacman -S xorg xfce4 xfce4-goodies linux-headers networkmanager network-manager-applet lightdm-gtk-greeter grub os-prober 
+ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
+hwclock --systohc
+nano /etc/locale.gen 
+locale-gen 
+echo "LANG=en_IN.UTF-8" > /etc/locale.conf
+echo "Dharma-X" > /etc/hostname
+nano /etc/hosts
+nano /etc/mkinitcpio.conf 
+mkinitcpio -p linux
+grub-install --force /dev/sda3
+grub-mkconfig -o /boot/grub/grub.cfg
+passwd
+systemctl enable lightdm.service 
+systemctl enable NetworkManager.service 
+pacman -Syu
+nano /etc/pacman.conf 
+nano /etc/resolv.conf 
+pacman -Syu
+pacman -S udisks2 dosfstools mtools ntfs-3g parted gparted  exfat-utils fuse-exfat android-tools gpart f2fs-tools xdg-user-dirs xdg-user-dirs-gtk gvfs-smb gvfs gvfs-mtp testdisk ddrescue openssh
+mkinitcpio -p linux
+nano /etc/default/grub 
+grub-mkconfig -o /boot/grub/grub.cfg
+exit
+pacman -Syu
+pacman -S firefox libreoffice mplayer smplayer vlc trojita medit steam icedtea-web npapi-vlc pavucontrol pulseaudio trojita
+pacman-key -r AE6866C7962DDE58
+pacman-key --lsign-key AE6866C7962DDE58
+pacman -S infinality-bundle jdk8-openjdk-infinality 
+cp -v /usr/share/doc/freetype2-infinality-ultimate/infinality-settings-generic /etc/X11/xinit/xinitrc.d/
+cp -v /usr/share/doc/freetype2-infinality-ultimate/infinality-settings.sh /etc/X11/xinit/xinitrc.d/
+ls -l /etc/profile.d/
+fc-presets set
+useradd -m -G wheel,video,audio,power,disk,storage,optical,lp,scanner -s /bin/bash abhisek -c "Abhisek Mukherjee"
+passwd abhisek
+useradd -m -G wheel,video,audio,power,disk,storage,optical,lp,scanner -s /bin/bash srimoyee -c "Srimoyee Mukherjee"
+passwd srimoyee
+visudo
+exit

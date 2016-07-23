@@ -1,0 +1,32 @@
+mkdir arch
+cd arch
+sudo pacman -S git
+git clone https://aur.archlinux.org/package-query.git
+cd package-query
+makepkg -si
+cd ..
+git clone https://aur.archlinux.org/yaourt.git
+cd yaourt
+makepkg -si
+cd ..
+ls -l
+yaourt -Syu --aur
+ls -la ..
+nano ~/.yaourtrc
+sudo timedatectl set-ntp true
+sudo timedatectl set-local-rtc true
+sudo timedatectl 
+sudo timedatectl status
+yaourt -Syu --aur
+cd .gnupg/
+gpg --export-ownertrust > otrust.tmp
+rm trustdb.gpg 
+gpg --import-ownertrust < otrust.tmp
+cd ..
+gpg --keyserver http://pgp.mit.edu:11371 --recv-keys CDBD406AA1AA7A1D
+gpg --lsign-key CDBD406AA1AA7A1D
+sudo gpg --keyserver http://pgp.mit.edu:11371 --recv-keys CDBD406AA1AA7A1D
+sudo pacman-key -r CDBD406AA1AA7A1D
+sudo pacman-key --lsign-key CDBD406AA1AA7A1D
+sudo pacman-key --refresh-keys 
+yaourt -S google-chrome freshplayerplugin byzanz xcursor-bluecurve numix-themes numix-circle-icon-theme-git numix-frost-themes xfce4-pulseaudio-plugin
