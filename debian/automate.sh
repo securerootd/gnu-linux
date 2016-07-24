@@ -46,7 +46,7 @@ nano /etc/X11/xorg.conf.d/20-nvidia.conf
 nano /etc/X11/xorg.conf.d/30-screen.conf
 nano /etc/X11/xorg.conf.d/50-synaptics.conf
 # install games
-apt install aisleriot gnome-chess gnome-sudoku gnome-mahjongg gnome-mines supertux supertuxkart -y
+apt install aisleriot gnome-chess gnome-sudoku gnome-mahjongg gnome-mines supertux supertuxkart chromium-bsu -y
 # install android development tools & kernel build options
 #apt-get install openjdk-8-jdk bison g++ gcc clang llvm git subversion gperf libxml2-utils subversion build-essential kernel-package kernel-wedge libncurses5-dev ccache libgtk2.0-dev libglib2.0-dev libglade2-dev linux-headers-amd64 android-sdk-build-tools -y
 # Install xfce required extras
