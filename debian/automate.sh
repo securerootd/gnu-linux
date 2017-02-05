@@ -99,7 +99,10 @@ cp -v 01_abhis3k.conf /etc/lightdm/lightdm.conf.d/
 
 
 # Install Web Developer Horde
-apt install php-curl php-gd php-imagick php-imap php-mcrypt php-memcache php-cli php-recode php-snmp php-sqlite3 php-tidy php-xmlrpc php-xsl php-fpm php-mysql php-pgsql mariadb-server mariadb-client postgresql-client postgresql apache2 -y
+apt install php-curl php-gd php-imagick php-imap php-mcrypt php-memcache php-cli \
+    php-recode php-snmp php-sqlite3 php-tidy php-xmlrpc php-xml-htmlsax3 php-xml-svg \
+    php-fpm php-mysql php-pgsql mariadb-server mariadb-client postgresql-client postgresql \
+    apache2 libapache2-mod-php libapache2-mod-perl2 libapache2-mod-python -y
 # Set system-wide fonts (Gnome)
 gsettings set org.gnome.desktop.interface document-font-name 'Verdana 10'
 gsettings set org.gnome.desktop.interface font-name 'Lucida Grande 10'
