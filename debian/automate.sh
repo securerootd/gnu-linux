@@ -48,7 +48,11 @@ nano /etc/X11/xorg.conf.d/50-synaptics.conf
 # install games
 apt install aisleriot gnome-chess gnome-sudoku gnome-mahjongg gnome-mines supertux supertuxkart chromium-bsu -y
 # install android development tools & kernel build options
-#apt install openjdk-8-jdk bison g++ gcc clang llvm git subversion gperf libxml2-utils subversion build-essential kernel-package kernel-wedge libncurses5-dev ccache libgtk2.0-dev libglib2.0-dev libglade2-dev linux-headers-amd64 android-sdk-build-tools -y
+#apt install openjdk-8-jdk bc clang llvm git subversion openjdk-8-jdk git-core gnupg flex bison gperf build-essential \
+#    zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev \
+#    libx11-dev lib32z1-dev ccache libgl1-mesa-dev libxml2-utils xsltproc unzip \
+#    kernel-package kernel-wedge libgtk2.0-dev linux-headers-amd64 \
+#    libglib2.0-dev libglade2-dev android-sdk-build-tools -y
 # Install xfce required extras
 apt install gksu sudo gvfs-backends gvfs-fuse gtk2-engines-murrine gtk2-engines-pixbuf  -y
 apt install libtxc-dxtn0 libtxc-dxtn0:i386 steam hexchat vainfo xdg-user-dirs-gtk lightdm-gtk-greeter-settings -y
