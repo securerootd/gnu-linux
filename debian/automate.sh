@@ -20,11 +20,11 @@ dpkg-reconfigure locales
 # Various repos signing
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 0F164EEB CE49F8C5 F0B0A992 E985B27B 65558117 719A73CF 
 # Add deb-multimedia keyring
-apt-get update && apt-get install --allow-unauthenticated -y deb-multimedia-keyring
-apt-get update
-apt-get install apt-transport-https apt-transport-tor -y
+apt update && apt install --allow-unauthenticated -y deb-multimedia-keyring
+apt update
+apt install apt-transport-https apt-transport-tor -y
 # upgrade
-apt-get update && apt-get dist-upgrade -y
+apt update && apt dist-upgrade -y
 # install desktop
 apt install task-xfce-desktop gtk3-engines-xfce firefox-esr evolution-ews dconf-cli dconf-editor -y
 # install firmware and essentials
@@ -48,14 +48,14 @@ nano /etc/X11/xorg.conf.d/50-synaptics.conf
 # install games
 apt install aisleriot gnome-chess gnome-sudoku gnome-mahjongg gnome-mines supertux supertuxkart chromium-bsu -y
 # install android development tools & kernel build options
-#apt-get install openjdk-8-jdk bison g++ gcc clang llvm git subversion gperf libxml2-utils subversion build-essential kernel-package kernel-wedge libncurses5-dev ccache libgtk2.0-dev libglib2.0-dev libglade2-dev linux-headers-amd64 android-sdk-build-tools -y
+#apt install openjdk-8-jdk bison g++ gcc clang llvm git subversion gperf libxml2-utils subversion build-essential kernel-package kernel-wedge libncurses5-dev ccache libgtk2.0-dev libglib2.0-dev libglade2-dev linux-headers-amd64 android-sdk-build-tools -y
 # Install xfce required extras
 apt install gksu sudo gvfs-backends gvfs-fuse gtk2-engines-murrine gtk2-engines-pixbuf  -y
 apt install libtxc-dxtn0 libtxc-dxtn0:i386 steam hexchat vainfo xdg-user-dirs-gtk lightdm-gtk-greeter-settings -y
 apt install numix-icon-theme-circle lxde-icon-theme faba-icon-theme faenza-icon-theme \
             human-icon-theme lxde-icon-theme sound-theme-freedesktop -y
 # Install extra Designer Mode
-apt-get install darktable rawtherapee audacious gjay clamtk pinta -y
+apt install darktable rawtherapee audacious gjay clamtk pinta -y
 # Install deb packages
 dpkg -i *.deb
 # Fix Problems
@@ -99,7 +99,7 @@ cp -v 01_abhis3k.conf /etc/lightdm/lightdm.conf.d/
 
 
 # Install Web Developer Horde
-apt-get install php5-curl php5-gd php5-imagick php5-imap php5-mcrypt php5-memcache php5-cli php5-recode php5-snmp php5-sqlite php5-tidy php5-xmlrpc php5-xsl php5-fpm php5-mysqlnd php5-pgsql php5-xcache mysql-server mysql-client postgresql-client postgresql lighttpd -y
+apt install php-curl php-gd php-imagick php-imap php-mcrypt php-memcache php-cli php-recode php-snmp php-sqlite3 php-tidy php-xmlrpc php-xsl php-fpm php-mysql php-pgsql mariadb-server mariadb-client postgresql-client postgresql apache2 -y
 # Set system-wide fonts (Gnome)
 gsettings set org.gnome.desktop.interface document-font-name 'Verdana 10'
 gsettings set org.gnome.desktop.interface font-name 'Lucida Grande 10'
