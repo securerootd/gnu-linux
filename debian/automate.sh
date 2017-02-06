@@ -55,6 +55,7 @@ apt install aisleriot gnome-chess gnome-sudoku gnome-mahjongg gnome-mines supert
 #    libglib2.0-dev libglade2-dev android-sdk-build-tools -y
 # Install xfce required extras
 apt install gksu sudo gvfs-backends gvfs-fuse gtk2-engines-murrine gtk2-engines-pixbuf  -y
+apt install engrampa arj lhasa lzip lzop ncompress rar rpm2cpio rzip sharutils unace unalz rar zoo unrar -y
 apt install libtxc-dxtn0 libtxc-dxtn0:i386 steam hexchat vainfo xdg-user-dirs-gtk lightdm-gtk-greeter-settings -y
 apt install numix-icon-theme-circle lxde-icon-theme faba-icon-theme faenza-icon-theme \
             human-icon-theme lxde-icon-theme sound-theme-freedesktop -y
