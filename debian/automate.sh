@@ -18,7 +18,7 @@ dpkg --add-architecture i386
 # Configure locales
 dpkg-reconfigure locales
 # Various repos signing
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 0F164EEB CE49F8C5 F0B0A992 E985B27B 65558117 719A73CF 
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 66BA314CE985B27B 5C808C2B65558117 52B709720F164EEB 07C8CCAFCE49F8C5 
 # Add deb-multimedia keyring
 apt update && apt install --allow-unauthenticated -y deb-multimedia-keyring
 apt update
@@ -26,7 +26,7 @@ apt install apt-transport-https apt-transport-tor -y
 # upgrade
 apt update && apt dist-upgrade -y
 # install desktop
-apt install task-xfce-desktop gtk3-engines-xfce firefox-esr evolution-ews dconf-cli dconf-editor -y
+apt install task-xfce-desktop gtk3-engines-xfce firefox-esr dconf-cli dconf-editor -y
 # install firmware and essentials
 apt install firmware-linux-nonfree firmware-misc-nonfree firmware-realtek firmware-iwlwifi firmware-atheros intel-microcode -y
 apt install mplayer smplayer vlc audacity handbrake-gtk qmmp qbittorrent qt4-qtconfig command-not-found -y
