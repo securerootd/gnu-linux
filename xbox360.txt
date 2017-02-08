@@ -1,0 +1,14 @@
+1. Add xpad to blacklist with this command
+
+$ echo "blacklist xpad" | sudo tee -a /etc/modprobe.d/blacklist.conf
+
+That way I don't have to run the rmmod xpad command.
+2. Add configuration for autostarting xboxdrv
+
+$ sudo nano /etc/init/xboxdrv.conf
+
+Add this and save the file:
+
+start on filesystem
+exec xboxdrv --mouse --deadzone 15% --silent
+expect fork
