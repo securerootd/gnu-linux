@@ -20,6 +20,9 @@ dnf copr enable dawid/better_fonts
 dnf install freetype-freeworld
 dnf install fontconfig-enhanced-defaults fontconfig-font-replacements
 
+# Atom
+dnf install https://github.com/atom/atom/releases/download/v1.11.1/atom.x86_64.rpm
+
 # NVIDIA
 dnf install xorg-x11-drv-nvidia akmod-nvidia "kernel-devel-uname-r == $(uname -r)"
 dnf install xorg-x11-drv-nvidia-libs.i686
@@ -28,4 +31,10 @@ dnf install xorg-x11-drv-nvidia-cuda vulkan vdpauinfo libva-vdpau-driver libva-u
 # dnf install cuda
 
 # Others
-dnf install freshplayerplugin vlc vlc-extras mplayer smplayer
+dnf install freshplayerplugin vlc vlc-extras mplayer smplayer icedtea-web
+
+# Android Build
+dnf install gcc gcc-c++ gperf flex bison glibc-devel.{x86_64,i686} zlib-devel.{x86_64,i686} ncurses-devel.i686 libsx-devel readline-devel.i686 perl-Switch
+dnf install glibc.i686 glibc-devel.i686 libstdc++.i686 zlib-devel.i686 ncurses-devel.i686 libX11-devel.i686 libXrender.i686 libXrandr.i686
+
+
