@@ -1,0 +1,31 @@
+# Customize Grub
+nano /etc/default/grub
+grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
+
+# Disable SELinux
+nano /etc/sysconfig/selinux
+
+# RPM Fusion
+dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+# Google Goodness
+dnf install https://dl.google.com/dl/linux/direct/google-chrome-unstable_current_x86_64.rpm
+dnf install https://dl.google.com/dl/linux/direct/google-talkplugin_current_x86_64.rpm
+
+# TeamViewer
+dnf install https://download.teamviewer.com/download/teamviewer.i686.rpm
+
+# Better Fonts
+dnf copr enable dawid/better_fonts
+dnf install freetype-freeworld
+dnf install fontconfig-enhanced-defaults fontconfig-font-replacements
+
+# NVIDIA
+dnf install xorg-x11-drv-nvidia akmod-nvidia "kernel-devel-uname-r == $(uname -r)"
+dnf install xorg-x11-drv-nvidia-libs.i686
+dnf install xorg-x11-drv-nvidia-cuda vulkan vdpauinfo libva-vdpau-driver libva-utils
+# dnf install http://developer.download.nvidia.com/compute/cuda/repos/fedora23/x86_64/cuda-repo-fedora23-8.0.44-1.x86_64.rpm
+# dnf install cuda
+
+# Others
+dnf install freshplayerplugin vlc vlc-extras mplayer smplayer
