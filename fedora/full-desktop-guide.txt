@@ -32,9 +32,14 @@ dnf install xorg-x11-drv-nvidia-cuda vulkan vdpauinfo libva-vdpau-driver libva-u
 
 # Others
 dnf install freshplayerplugin vlc vlc-extras mplayer smplayer icedtea-web
+dnf install bluecurve-cursor-theme 
 
 # Android Build
 dnf install gcc gcc-c++ gperf flex bison glibc-devel.{x86_64,i686} zlib-devel.{x86_64,i686} ncurses-devel.i686 libsx-devel readline-devel.i686 perl-Switch
 dnf install glibc.i686 glibc-devel.i686 libstdc++.i686 zlib-devel.i686 ncurses-devel.i686 libX11-devel.i686 libXrender.i686 libXrandr.i686
+
+# Papirus Icons
+wget -O - https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-icon-theme-gtk/master/install-papirus-home.sh | bash
+# wget -O - https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-icon-theme-gtk/master/remove-papirus.sh | bash
 
 
