@@ -32,22 +32,21 @@ dnf install xorg-x11-drv-nvidia-cuda vulkan vdpauinfo libva-vdpau-driver libva-u
 
 # Others
 dnf install freshplayerplugin vlc vlc-extras mplayer smplayer icedtea-web
-dnf install bluecurve-cursor-theme steam:i686
-dnf install audacity handbrake-gtk qmmp qbittorrent libreoffice
-dnf install fuse ntfs-3g exfat-utils fuse-exfat hfsplus hfsutils hfsprogs testdisk adb fastboot gddrescue hddtemp hdparm smartmontools gparted
-dnf install ssh cowsay fortunes zsh aria2 conky-all numlockx wireshark
+dnf install bluecurve-cursor-theme numix-gtk-theme numix-icon-theme-circle steam
+dnf install audacity HandBrake-gui qmmp qbittorrent libreoffice
+dnf install fuse ntfs-3g exfat-utils fuse-exfat hfsutils hfsplus-tools testdisk adb fastboot ddrescue hddtemp hdparm smartmontools gparted
+dnf install openssh cowsay fortune-mod zsh aria2 conky numlockx wireshark-qt
 dnf install aisleriot gnome-chess gnome-sudoku gnome-mahjongg gnome-mines
-dnf install arj lhasa lzip lzop ncompress rar rpm2cpio rzip sharutils unace unalz rar zoo unrar p7zip engrampa
-dnf install darktable rawtherapee audacious gjay clamtk pinta
+dnf install arj lzip lzop ncompress rzip sharutils unace unrar p7zip engrampa
+dnf install darktable rawtherapee audacious clamtk pinta
 dnf install http://download.opensuse.org/repositories/home:/ecsos/openSUSE_Factory/x86_64/peazip-6.4.0-3.10.x86_64.rpm
-# dnf install http://download.opensuse.org/repositories/home:/zhonghuaren/Fedora_25/x86_64/peazip-6.3.1-4.2.x86_64.rpm
 
 # Android Build
-dnf install gcc gcc-c++ gperf flex bison glibc-devel.{x86_64,i686} zlib-devel.{x86_64,i686} ncurses-devel.i686 libsx-devel readline-devel.i686 perl-Switch
+dnf install gcc gcc-c++ gperf flex bison glibc-devel.{x86_64,i686} zlib-devel.{x86_64,i686} ncurses-devel.i686 readline-devel.i686 perl-Switch
 dnf install glibc.i686 glibc-devel.i686 libstdc++.i686 zlib-devel.i686 ncurses-devel.i686 libX11-devel.i686 libXrender.i686 libXrandr.i686
 
 # Papirus Icons
-wget -O - https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-icon-theme-gtk/master/install-papirus-home.sh | bash
-# wget -O - https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-icon-theme-gtk/master/remove-papirus.sh | bash
+wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-icon-theme/master/install-papirus-root.sh | sh
+# wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-icon-theme/master/remove-papirus.sh | sh
 
 
