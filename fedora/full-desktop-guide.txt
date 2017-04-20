@@ -53,3 +53,5 @@ wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-icon-
 nvidia-settings --assign CurrentMetaMode="$(nvidia-settings -q CurrentMetaMode -t|tr '\n' ' '|sed -e 's/.*:: \(.*\)/\1\n/g' -e 's/}/, ForceCompositionPipeline = On}/g')" > /dev/null
 nvidia-settings -a "[gpu:0]/GPUFanControlState=1" -a "[fan:0]/GPUTargetFanSpeed=40"
 
+nvidia-settings -a CurrentMetaMode="nvidia-auto-select +0+0 { ForceCompositionPipeline = On }" -a "[gpu:0]/GPUFanControlState=1" -a "[fan:0]/GPUTargetFanSpeed=40"
+
