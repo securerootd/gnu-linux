@@ -1,13 +1,18 @@
 dnf clean all
 dnf check-update
 dnf install *.rpm
-dnf remove claws-mail* pragha* transmission* asunder* xscreensaver*
+dnf remove claws-mail* pragha* transmission* asunder* xscreensaver* abiword* gnumeric* goffice*
 dnf groupinstall 'Development Tools'
 dnf copr enable dawid/better_fonts
 dnf install fontconfig-enhanced-defaults fontconfig-font-replacements
 dnf install xorg-x11-drv-nvidia akmod-nvidia xorg-x11-drv-nvidia-cuda
 dnf install libreoffice stellarium inkscape gimp vlc smplayer wireshark bluecurve-cursor-theme freshplayerplugin icedtea-web
 dnf copr enable dirkdavidis/papirus-icon-theme
-dnf install papirus-icon-theme light-locker redshift-gtk spectre-meltdown-checker libreoffice
+dnf install papirus-icon-theme light-locker redshift-gtk spectre-meltdown-checker libreoffice persepolis hplip-gui simple-scan kazam obs-studio audacity HandBrake-gui steam
 nano /etc/default/grub 
 grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
+
+restorecon -R -v /home
+git clone https://github.com/Jazqa/adwaita-tweaks.git ~/.themes/'Adwaita Tweaks'
+git clone https://github.com/Jazqa/adwaita-tweaks.git -b dark ~/.themes/'Adwaita Tweaks Dark'
+nvidia-settings -a CurrentMetaMode="nvidia-auto-select +0+0 { ForceCompositionPipeline = On }" -a "[gpu:0]/GPUFanControlState=1" -a "[fan:0]/GPUTargetFanSpeed=40"
