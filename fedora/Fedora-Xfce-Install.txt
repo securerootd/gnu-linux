@@ -43,7 +43,7 @@ git clone https://github.com/Jazqa/adwaita-tweaks.git -b dark ~/.themes/'Adwaita
 
 
 # Install Other utilities
-dnf install stellarium wireshark spectre-meltdown-checker persepolis
+dnf install spectre-meltdown-checker persepolis qbittorrent stellarium wireshark
 
 
 # Install Games
