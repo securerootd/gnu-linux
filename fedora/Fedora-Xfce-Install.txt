@@ -1,18 +1,65 @@
 dnf clean all
 dnf check-update
+
+# Enable RPMfusion
+dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+
+# Install Local Packages
 dnf install *.rpm
+
+
+# Remove Unnecessary software
 dnf remove claws-mail* pragha* transmission* asunder* xscreensaver* abiword* gnumeric* goffice*
+
+
+# Install Prime software
 dnf groupinstall 'Development Tools'
+
+
+# Install Better Fonts
 dnf copr enable dawid/better_fonts
 dnf install fontconfig-enhanced-defaults fontconfig-font-replacements
-dnf install xorg-x11-drv-nvidia akmod-nvidia xorg-x11-drv-nvidia-cuda
-dnf install libreoffice stellarium inkscape gimp vlc smplayer wireshark bluecurve-cursor-theme freshplayerplugin icedtea-web
+
+
+# Install Office
+dnf install libreoffice
+
+
+# Install Essential extras
+dnf install keepassxc freshplayerplugin icedtea-web light-locker redshift-gtk hplip-gui simple-scan
+
+
+# Install Multimedia
+dnf install inkscape gimp vlc smplayer mpv smplayer-themes darktable rawtherapee kazam obs-studio audacity HandBrake-gui blender
+
+
+# Install theme icons
 dnf copr enable dirkdavidis/papirus-icon-theme
-dnf install papirus-icon-theme light-locker redshift-gtk spectre-meltdown-checker libreoffice persepolis hplip-gui simple-scan kazam obs-studio audacity HandBrake-gui steam
+dnf install bluecurve-cursor-theme papirus-icon-theme pop-icon-theme numix-icon-theme-circle numix-gtk-theme arc-theme paper-icon-theme
+
+git clone https://github.com/Jazqa/adwaita-tweaks.git ~/.themes/'Adwaita Tweaks'
+git clone https://github.com/Jazqa/adwaita-tweaks.git -b dark ~/.themes/'Adwaita Tweaks Dark'
+
+
+# Install Other utilities
+dnf install stellarium wireshark spectre-meltdown-checker persepolis
+
+
+# Install Games
+dnf install steam aisleriot gnome-chess gnome-mines gnome-mahjongg gnome-sudoku
+
+
+# Customize Grub
 nano /etc/default/grub 
 grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
 
+
+# Fix SELinux permissions
 restorecon -R -v /home
-git clone https://github.com/Jazqa/adwaita-tweaks.git ~/.themes/'Adwaita Tweaks'
-git clone https://github.com/Jazqa/adwaita-tweaks.git -b dark ~/.themes/'Adwaita Tweaks Dark'
+
+
+# Nvidia Specific
+dnf install xorg-x11-drv-nvidia akmod-nvidia xorg-x11-drv-nvidia-cuda
+
 nvidia-settings -a CurrentMetaMode="nvidia-auto-select +0+0 { ForceCompositionPipeline = On }" -a "[gpu:0]/GPUFanControlState=1" -a "[fan:0]/GPUTargetFanSpeed=40"
