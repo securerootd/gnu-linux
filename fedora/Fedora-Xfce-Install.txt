@@ -1,65 +1,130 @@
 dnf clean all
 dnf check-update
 
+# Enable UnitedRPM
+rpm --import https://raw.githubusercontent.com/UnitedRPMs/unitedrpms/master/URPMS-GPG-PUBLICKEY-Fedora-24
+dnf -y install https://github.com/UnitedRPMs/unitedrpms/releases/download/11/unitedrpms-$(rpm -E %fedora)-11.fc$(rpm -E %fedora).noarch.rpm
+
 # Enable RPMfusion
-dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
+
+# Enable Google
+rpm --import https://dl.google.com/linux/linux_signing_key.pub
+dnf install https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm https://dl.google.com/linux/direct/google-talkplugin_current_x86_64.rpm https://dl.google.com/dl/earth/client/current/google-earth-pro-stable-current.x86_64.rpm -y
+
+
+# Enable Microsoft
+rpm --import https://packages.microsoft.com/keys/microsoft.asc
+sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+dnf install https://repo.skype.com/latest/skypeforlinux-64.rpm
 
 
 # Install Local Packages
-dnf install *.rpm
+dnf install Downloads/*.rpm
 
+# Install dockbarx
+dnf copr enable masakifuruta/dockbarx
+dnf install xfce4-dockbarx-plugin
 
 # Remove Unnecessary software
-dnf remove claws-mail* pragha* transmission* asunder* xscreensaver* abiword* gnumeric* goffice*
-
+dnf remove claws-mail* pragha* transmission* asunder* xscreensaver* abiword* gnumeric* goffice* parole* virtualbox* evince* qemu* spice* vmware* anaconda*
 
 # Install Prime software
-dnf groupinstall 'Development Tools'
+dnf groupinstall 'Development Tools' 'C Development Tools and Libraries'
 
 
 # Install Better Fonts
 dnf copr enable dawid/better_fonts
 dnf install fontconfig-enhanced-defaults fontconfig-font-replacements
+# dnf install adobe-source-{sans,serif,code}-pro-fonts *anonymouspro-fonts google-noto-{sans,serif,mono,emoji}-fonts 
 
 
 # Install Office
-dnf install libreoffice
+dnf groupinstall LibreOffice
 
 
 # Install Essential extras
-dnf install keepassxc freshplayerplugin icedtea-web light-locker redshift-gtk hplip-gui simple-scan
+dnf install keepassxc freshplayerplugin icedtea-web light-locker redshift-gtk hplip-gui simple-scan 
+
+# Install System Tools
+dnf install numlockx spectre-meltdown-checker inxi hwinfo testdisk pv fuse-exfat exfat-utils apfs-fuse hfsplus-tools cowsay fortune-mod conky ddrescue hddtemp hdparm smartmontools gparted arj lzip lzop ncompress rzip sharutils unace unrar p7zip p7zip-gui lightdm-gtk-greeter-settings
+
+# Install Antimalware
+dnf install clamtk
 
 
 # Install Multimedia
-dnf install inkscape gimp vlc smplayer mpv smplayer-themes darktable rawtherapee kazam obs-studio audacity HandBrake-gui blender
+dnf install inkscape gimp vlc smplayer mpv smplayer-themes darktable rawtherapee obs-studio audacity HandBrake-gui blender simplescreenrecorder flowblade pinta
 
 
 # Install theme icons
-dnf copr enable dirkdavidis/papirus-icon-theme
-dnf install bluecurve-cursor-theme papirus-icon-theme pop-icon-theme numix-icon-theme-circle numix-gtk-theme arc-theme paper-icon-theme
+dnf install bluecurve-cursor-theme papirus-icon-theme numix-icon-theme-circle numix-gtk-themebreeze-cursor-theme breeze-gtk sound-theme-acoustic deepin-sound-theme libreoffice-icon-theme-papirus adwaita-qt5
 
-git clone https://github.com/Jazqa/adwaita-tweaks.git ~/.themes/'Adwaita Tweaks'
-git clone https://github.com/Jazqa/adwaita-tweaks.git -b dark ~/.themes/'Adwaita Tweaks Dark'
+
+git clone https://github.com/Jazqa/adwaita-tweaks.git /usr/share/themes/'Adwaita Tweaks'
+git clone https://github.com/Jazqa/adwaita-tweaks.git -b dark /usr/share/themes/'Adwaita Tweaks Dark'
 
 
 # Install Other utilities
-dnf install spectre-meltdown-checker persepolis qbittorrent stellarium wireshark
+dnf install persepolis qbittorrent stellarium wireshark discord telegram-desktop notepadqq qt5ct goldendict qalculate-gtk qpdfview-qt5 hexchat
 
+# Install Backup Tools
+dnf install timeshift deja-dup duply
+
+
+# Some Minor Tweaks
+#export QT_QPA_PLATFORMTHEME=qt5ct
+xdg-user-dirs-gtk-update
+dconf write /org/gnome/nautilus/preferences/always-use-location-entry true
 
 # Install Games
-dnf install steam aisleriot gnome-chess gnome-mines gnome-mahjongg gnome-sudoku
+dnf install aisleriot gnome-chess gnome-mines gnome-mahjongg gnome-sudoku steam
 
+# Install Flatpak and Snap
+dnf install flatpak snapd
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+# flatpak install flathub com.valvesoftware.Steam
+flatpak install flathub com.spotify.Client
+flatpak install flathub com.discordapp.Discord
 
 # Customize Grub
+dnf install grub2-efi-x64-modules
+cp -rv /usr/lib/grub/x86_64-efi /boot/efi/EFI/fedora/
+nano /etc/grub.d/00_header 
 nano /etc/default/grub 
+grub2-mkfont --output=/boot/efi/EFI/fedora/fonts/unicode.pf2 --size=16 /usr/share/fonts/apple-macos/HelveticaWorld-Regular.ttf
 grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
 
 
 # Fix SELinux permissions
 restorecon -R -v /home
+nano /etc/selinux/config 
+setenforce 0
+getenforce
 
 
 # Nvidia Specific
 dnf install xorg-x11-drv-nvidia akmod-nvidia xorg-x11-drv-nvidia-cuda
-
+dnf install vdpauinfo libva-vdpau-driver libva-utils vulkan
 nvidia-settings -a CurrentMetaMode="nvidia-auto-select +0+0 { ForceCompositionPipeline = On }" -a "[gpu:0]/GPUFanControlState=1" -a "[fan:0]/GPUTargetFanSpeed=40"
+
+# Enable Android udev rules
+# Copy rules file
+cp -v 51-android.rules /etc/udev/rules.d/
+
+# SSH Keys
+ssh-keygen -t rsa -b 4096 -C {email}
+ssh-add ~/.ssh/id_rsa
+
+# GnuPG PGP Keys
+gpg --full-generate-key
+gpg --list-keys
+gpg --export-secret-keys --armor {email} > my-privkey.asc
+gpg --export --armor {email} > my-pubkey.asc
+gpg --output my-revocation.asc --gen-revoke {key-id}
+gpg --keyserver pool.sks-keyservers.net --send-keys {key-id}
+gpg --keyserver pgp.mit.edu --send-keys {key-id}
+gpg --keyserver keysever.ubuntu.com --send-keys {key-id}
+gpg --keyserver keysever.opensuse.org --send-keys {key-id}
+gpg --list-keys
+
