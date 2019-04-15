@@ -16,10 +16,10 @@ dnf install https://dl.google.com/linux/direct/google-chrome-stable_current_x86_
 # Enable Microsoft
 rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
-dnf install code https://repo.skype.com/latest/skypeforlinux-64.rpm -y
+dnf install code https://repo.skype.com/latest/skypeforlinux-64.rpm
 
 # Enable TeamViewer
-dnf install https://download.teamviewer.com/download/linux/teamviewer.x86_64.rpm -y
+dnf install https://download.teamviewer.com/download/linux/teamviewer.x86_64.rpm
 
 
 # Install Local Packages
@@ -27,32 +27,27 @@ dnf install Downloads/*.rpm
 
 # Install flat remix
 dnf copr enable daniruiz/flat-remix
-dnf install flat-remix flat-remix-gtk
-
-
-# Remove Unnecessary software
-dnf remove claws-mail* pragha* transmission* asunder* xscreensaver* abiword* gnumeric* goffice* parole* virtualbox* evince* qemu* spice* vmware*
+dnf install flat-remix flat-remix-gtk flat-remix-gnome
 
 # Install Prime software
 dnf install @editors @c-development @development-tools
 
 
-# Install Office
-dnf install @libreoffice
-
+# Install Gnome Essentials
+dnf install gnome-tweaks tilix nano 
 
 # Install Essential extras
-dnf install keepassxc freshplayerplugin icedtea-web light-locker redshift-gtk hplip-gui simple-scan 
+dnf install keepassxc freshplayerplugin icedtea-web redshift-gtk
 
 # Install System Tools
-dnf install numlockx spectre-meltdown-checker inxi hwinfo testdisk pv fuse-exfat exfat-utils apfs-fuse hfsplus-tools cowsay fortune-mod conky ddrescue hddtemp hdparm smartmontools gparted arj lzip lzop ncompress rzip sharutils unace unrar p7zip p7zip-gui lightdm-gtk-greeter-settings chrome-remote-desktop htop neofetch
+dnf install numlockx spectre-meltdown-checker inxi hwinfo testdisk pv fuse-exfat exfat-utils apfs-fuse hfsplus-tools cowsay fortune-mod conky ddrescue hddtemp hdparm smartmontools gparted arj lzip lzop ncompress rzip sharutils unace unrar p7zip p7zip-gui chrome-remote-desktop htop neofetch
 
 # Install Antimalware
 dnf install clamtk
 
 
 # Install Multimedia
-dnf install inkscape gimp vlc smplayer mpv smplayer-themes darktable rawtherapee obs-studio audacity HandBrake-gui blender simplescreenrecorder flowblade pinta
+dnf install inkscape gimp vlc smplayer mpv smplayer-themes darktable rawtherapee obs-studio audacity HandBrake-gui blender
 
 
 # Install theme icons
@@ -64,20 +59,11 @@ git clone https://github.com/Jazqa/adwaita-tweaks.git -b dark /usr/share/themes/
 
 
 # Install Other utilities
-dnf install persepolis qbittorrent stellarium wireshark discord telegram-desktop notepadqq goldendict qalculate-gtk qpdfview-qt5 hexchat
+dnf install persepolis qbittorrent stellarium wireshark goldendict qalculate-gtk hexchat
 
-# Install Backup Tools
-dnf install duply
-
-
-# Some Minor Tweaks
-#export QT_QPA_PLATFORMTHEME=qt5ct
-xdg-user-dirs-gtk-update
-dconf write /org/gnome/nautilus/preferences/always-use-location-entry true
-cp -v nvidia-tweaks.desktop /etc/xdg/autostart/
 
 # Install Games
-dnf install aisleriot gnome-chess gnome-mines gnome-mahjongg gnome-sudoku
+dnf install aisleriot @gnome-games
 
 # Install Flatpak and Snap
 dnf install flatpak snapd
@@ -85,6 +71,15 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 # flatpak install flathub com.valvesoftware.Steam
 flatpak install flathub com.spotify.Client
 flatpak install flathub com.discordapp.Discord
+
+
+# Some Minor Tweaks
+#export QT_QPA_PLATFORMTHEME=qt5ct
+xdg-user-dirs-gtk-update
+dconf write /org/gnome/nautilus/preferences/always-use-location-entry true
+cp -v nvidia-tweaks.desktop /etc/xdg/autostart/
+systemctl enable hddtemp.service
+
 
 # Customize Grub
 dnf install grub2-efi-x64-modules
