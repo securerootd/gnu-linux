@@ -1,0 +1,24 @@
+git --version
+git config --global user.name "securerootd"
+git config --global user.email "abhisek.mukherjee@gmail.com"
+ls -al ~/.ssh
+ssh-keygen -t rsa -C "abhisek.mukherjee@gmail.com"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+cat ~/.ssh/id_rsa.pub
+ssh -T git@github.com
+touch .gitignore
+
+git init
+git remote add origin git@github.com:securerootd/gnu-linux
+git pull origin master -v
+
+git add .gitignore 
+git commit -m 'Ignore Files'
+git diff --stat --cached origin/master
+git push origin master -v
+
+git add --all
+git commit -m 'First set, Mostly Debian and Arch'
+git diff --stat --cached origin/master
+git push origin master -v

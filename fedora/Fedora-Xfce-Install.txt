@@ -1,17 +1,12 @@
 dnf clean all
 dnf check-update
 
-# Enable UnitedRPM
-rpm --import https://raw.githubusercontent.com/UnitedRPMs/unitedrpms/master/URPMS-GPG-PUBLICKEY-Fedora-24
-dnf -y install https://github.com/UnitedRPMs/unitedrpms/releases/download/11/unitedrpms-$(rpm -E %fedora)-11.fc$(rpm -E %fedora).noarch.rpm
-
 # Enable RPMfusion
 dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 
 # Enable Google
 rpm --import https://dl.google.com/linux/linux_signing_key.pub
 dnf install https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm https://dl.google.com/linux/direct/google-talkplugin_current_x86_64.rpm https://dl.google.com/dl/earth/client/current/google-earth-pro-stable-current.x86_64.rpm -y
-
 
 # Enable Microsoft
 rpm --import https://packages.microsoft.com/keys/microsoft.asc
@@ -21,20 +16,26 @@ dnf install code https://repo.skype.com/latest/skypeforlinux-64.rpm -y
 # Enable TeamViewer
 dnf install https://download.teamviewer.com/download/linux/teamviewer.x86_64.rpm -y
 
+# Enable AnyDesk
+dnf install https://download.anydesk.com/linux/fedora24/anydesk-5.0.0-1.fc24.x86_64.rpm -y
+
+# Enable Zoom
+rpm --import https://zoom.us/linux/download/pubkey
+dnf install https://zoom.us/client/latest/zoom_x86_64.rpm -y
 
 # Install Local Packages
 dnf install Downloads/*.rpm
 
 # Install flat remix
-dnf copr enable daniruiz/flat-remix
+dnf copr enable daniruiz/flat-remix -y
 dnf install flat-remix flat-remix-gtk
 
 
 # Remove Unnecessary software
-dnf remove claws-mail* pragha* transmission* asunder* xscreensaver* abiword* gnumeric* goffice* parole* virtualbox* evince* qemu* spice* vmware*
+dnf remove claws-mail* pragha* transmission* asunder* xscreensaver* abiword* gnumeric* goffice* parole* virtualbox* qemu* spice* vmware*
 
 # Install Prime software
-dnf install @editors @c-development @development-tools
+dnf install @editors @c-development @development-tools terminus-fonts*
 
 
 # Install Office
@@ -45,14 +46,14 @@ dnf install @libreoffice
 dnf install keepassxc freshplayerplugin icedtea-web light-locker redshift-gtk hplip-gui simple-scan 
 
 # Install System Tools
-dnf install numlockx spectre-meltdown-checker inxi hwinfo testdisk pv fuse-exfat exfat-utils apfs-fuse hfsplus-tools cowsay fortune-mod conky ddrescue hddtemp hdparm smartmontools gparted arj lzip lzop ncompress rzip sharutils unace unrar p7zip p7zip-gui lightdm-gtk-greeter-settings chrome-remote-desktop htop neofetch
+dnf install numlockx spectre-meltdown-checker inxi hwinfo testdisk pv fuse-exfat exfat-utils apfs-fuse hfsplus-tools cowsay fortune-mod conky ddrescue hddtemp hdparm smartmontools gparted arj lzip lzop ncompress rzip sharutils unace unrar p7zip p7zip-gui lightdm-gtk-greeter-settings chrome-remote-desktop htop neofetch lua-socket lua-json speedtest-cli android-tools qt5ct
 
 # Install Antimalware
 dnf install clamtk
 
 
 # Install Multimedia
-dnf install inkscape gimp vlc smplayer mpv smplayer-themes darktable rawtherapee obs-studio audacity HandBrake-gui blender simplescreenrecorder flowblade pinta
+dnf install inkscape gimp vlc smplayer mpv smplayer-themes darktable rawtherapee obs-studio audacity blender flowblade
 
 
 # Install theme icons
@@ -64,7 +65,7 @@ git clone https://github.com/Jazqa/adwaita-tweaks.git -b dark /usr/share/themes/
 
 
 # Install Other utilities
-dnf install persepolis qbittorrent stellarium wireshark discord telegram-desktop notepadqq goldendict qalculate-gtk qpdfview-qt5 hexchat
+dnf install persepolis qbittorrent stellarium wireshark goldendict qalculate-gtk hexchat
 
 # Install Backup Tools
 dnf install duply
@@ -91,7 +92,7 @@ dnf install grub2-efi-x64-modules
 cp -rv /usr/lib/grub/x86_64-efi /boot/efi/EFI/fedora/
 nano /etc/grub.d/00_header 
 nano /etc/default/grub 
-grub2-mkfont --output=/boot/efi/EFI/fedora/fonts/unicode.pf2 --size=16 /usr/share/fonts/apple-macos/HelveticaWorld-Regular.ttf
+grub2-mkfont --output=/boot/efi/EFI/fedora/fonts/unicode.pf2 --size=20 /usr/share/fonts/ms-win10/consola.ttf
 grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
 
 

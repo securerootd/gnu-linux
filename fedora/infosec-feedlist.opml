@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<opml version="1.0">
+  <head>
+    <title>Liferea Feed List Export</title>
+  </head>
+  <body>
+    <outline title="InfoSec" text="InfoSec" description="InfoSec" type="folder">
+      <outline title="BankInfoSecurity.com  RSS Syndication" text="BankInfoSecurity.com  RSS Syndication" description="BankInfoSecurity.com  RSS Syndication" type="rss" xmlUrl="http://feeds.feedburner.com/bankinfosecurity/com" htmlUrl="https://www.bankinfosecurity.com/rssFeeds.php?type=main"/>
+      <outline title="BankInfoSecurity.in  RSS Syndication" text="BankInfoSecurity.in  RSS Syndication" description="BankInfoSecurity.in  RSS Syndication" type="rss" xmlUrl="http://feeds.feedburner.com/bankinfosecurity/in" htmlUrl="https://www.bankinfosecurity.in/rssFeeds.php?type=main"/>
+      <outline title="CSO Online" text="CSO Online" description="CSO Online" type="rss" xmlUrl="https://www.csoonline.com/index.rss" htmlUrl="https://www.csoonline.com"/>
+      <outline title="Cyber Defense Magazine" text="Cyber Defense Magazine" description="Cyber Defense Magazine" type="rss" xmlUrl="http://www.cyberdefensemagazine.com/feed/" htmlUrl="http://www.cyberdefensemagazine.com"/>
+      <outline title="Cyber Security Review" text="Cyber Security Review" description="Cyber Security Review" type="rss" xmlUrl="https://www.cybersecurity-review.com/feed/" htmlUrl="https://www.cybersecurity-review.com"/>
+      <outline title="Cybers Guards" text="Cybers Guards" description="Cybers Guards" type="rss" xmlUrl="https://cybersguards.com/feed/" htmlUrl="https://cybersguards.com"/>
+      <outline title="Cybersecurity Insiders" text="Cybersecurity Insiders" description="Cybersecurity Insiders" type="rss" xmlUrl="https://www.cybersecurity-insiders.com/feed/" htmlUrl="https://www.cybersecurity-insiders.com"/>
+      <outline title="Dark Reading:" text="Dark Reading:" description="Dark Reading:" type="rss" xmlUrl="https://www.darkreading.com/rss_simple.asp" htmlUrl="https://www.darkreading.com"/>
+      <outline title="DataBreachToday.com  RSS Syndication" text="DataBreachToday.com  RSS Syndication" description="DataBreachToday.com  RSS Syndication" type="rss" xmlUrl="http://feeds.feedburner.com/databreachtoday/com" htmlUrl="https://www.databreachtoday.com/rssFeeds.php?type=main"/>
+      <outline title="E Hacking News - Latest Hacker News and IT Security News" text="E Hacking News - Latest Hacker News and IT Security News" description="E Hacking News - Latest Hacker News and IT Security News" type="atom" xmlUrl="http://www.ehackingnews.com/feeds/posts/default" htmlUrl="http://www.ehackingnews.com/"/>
+      <outline title="GBHackers On Security" text="GBHackers On Security" description="GBHackers On Security" type="rss" xmlUrl="http://feeds.feedburner.com/gbhackers" htmlUrl="https://gbhackers.com"/>
+      <outline title="GovInfoSecurity.com  RSS Syndication" text="GovInfoSecurity.com  RSS Syndication" description="GovInfoSecurity.com  RSS Syndication" type="rss" xmlUrl="http://feeds.feedburner.com/govinfosecurity/com" htmlUrl="https://www.govinfosecurity.com/rssFeeds.php?type=main"/>
+      <outline title="Graham Cluley" text="Graham Cluley" description="Graham Cluley" type="rss" xmlUrl="https://www.grahamcluley.com/feed/" htmlUrl="https://www.grahamcluley.com"/>
+      <outline title="Hacker News Bulletin | Find the Latest Hackers News" text="Hacker News Bulletin | Find the Latest Hackers News" description="Hacker News Bulletin | Find the Latest Hackers News" type="rss" xmlUrl="http://www.hackersnewsbulletin.com/feed" htmlUrl="http://www.hackersnewsbulletin.com"/>
+      <outline title="Hacker Ritz" text="Hacker Ritz" description="Hacker Ritz" type="atom" xmlUrl="https://hackerritz.blogspot.com/feeds/posts/default" htmlUrl="https://hackerritz.blogspot.com/"/>
+      <outline title="Hackerpost" text="Hackerpost" description="Hackerpost" type="rss" xmlUrl="https://hackerpost.co/feed/" htmlUrl="https://hackerpost.co"/>
+      <outline title="HackRead" text="HackRead" description="HackRead" type="rss" xmlUrl="https://www.hackread.com/feed" htmlUrl="https://www.hackread.com"/>
+      <outline title="Help Net Security" text="Help Net Security" description="Help Net Security" type="rss" xmlUrl="https://www.helpnetsecurity.com/feed/" htmlUrl="https://www.helpnetsecurity.com"/>
+      <outline title="Information Security Buzz" text="Information Security Buzz" description="Information Security Buzz" type="rss" xmlUrl="https://www.informationsecuritybuzz.com/feed/" htmlUrl="https://www.informationsecuritybuzz.com"/>
+      <outline title="Infosec Island Latest Articles" text="Infosec Island Latest Articles" description="Infosec Island Latest Articles" type="rss" xmlUrl="http://infosecisland.com/rss.html" htmlUrl="https://infosecisland.infosecisland.com"/>
+      <outline title="IT Security Guru" text="IT Security Guru" description="IT Security Guru" type="rss" xmlUrl="https://www.itsecurityguru.org/feed/" htmlUrl="https://www.itsecurityguru.org"/>
+      <outline title="Krebs on Security" text="Krebs on Security" description="Krebs on Security" type="rss" xmlUrl="https://krebsonsecurity.com/feed/" htmlUrl="https://krebsonsecurity.com"/>
+      <outline title="Naked Security" text="Naked Security" description="Naked Security" type="rss" xmlUrl="https://nakedsecurity.sophos.com/feed/" htmlUrl="https://nakedsecurity.sophos.com"/>
+      <outline title="New Subscription" text="New Subscription" description="New Subscription" type="rss" xmlUrl="https://hackercombat.com/feed/" htmlUrl="https://hackercombat.com"/>
+      <outline title="Online Security News, Reviews, How To and Hacks" text="Online Security News, Reviews, How To and Hacks" description="Online Security News, Reviews, How To and Hacks" type="rss" xmlUrl="https://securitygladiators.com/feed/" htmlUrl="https://securitygladiators.com"/>
+      <outline title="Rajveer Shinghania" text="Rajveer Shinghania" description="Rajveer Shinghania" type="rss" xmlUrl="https://cybernewsportal.wordpress.com/feed/" htmlUrl="https://cybernewsportal.wordpress.com"/>
+      <outline title="SANS Internet Storm Center, InfoCON: green" text="SANS Internet Storm Center, InfoCON: green" description="SANS Internet Storm Center, InfoCON: green" type="rss" xmlUrl="https://isc.sans.edu/rssfeed_full.xml" htmlUrl="https://isc.sans.edu"/>
+      <outline title="SANS ISC InfoSec News Feed" text="SANS ISC InfoSec News Feed" description="SANS ISC InfoSec News Feed" type="rss" xmlUrl="https://isc.sans.edu/newssummaryrss.xml" htmlUrl="http://isc.sans.edu"/>
+      <outline title="SearchCIO" text="SearchCIO" description="SearchCIO" type="rss" xmlUrl="https://searchcio.techtarget.com/rss/IT-news-and-analysis-for-CIOs.xml" htmlUrl="https://searchcio.techtarget.com"/>
+      <outline title="SearchNetworking" text="SearchNetworking" description="SearchNetworking" type="rss" xmlUrl="https://searchnetworking.techtarget.com/rss/Network-security-news-advice-and-technical-information.xml" htmlUrl="https://searchnetworking.techtarget.com"/>
+      <outline title="SearchSecurity" text="SearchSecurity" description="SearchSecurity" type="rss" xmlUrl="https://searchsecurity.techtarget.com/rss/Threat-Monitor.xml" htmlUrl="https://searchsecurity.techtarget.com"/>
+      <outline title="SearchSecurity" text="SearchSecurity" description="SearchSecurity" type="rss" xmlUrl="https://searchsecurity.techtarget.com/rss/Security-Bytes.xml" htmlUrl="https://searchsecurity.techtarget.com"/>
+      <outline title="SearchSecurity" text="SearchSecurity" description="SearchSecurity" type="rss" xmlUrl="https://searchsecurity.techtarget.com/rss/Security-Wire-Daily-News.xml" htmlUrl="https://searchsecurity.techtarget.com"/>
+      <outline title="Security News &#x2013; Binary Blogger" text="Security News &#x2013; Binary Blogger" description="Security News &#x2013; Binary Blogger" type="rss" xmlUrl="https://binaryblogger.com/category/interesting-news/securitynews/feed/" htmlUrl="https://binaryblogger.com"/>
+      <outline title="Security Watch &#x2013; BH Consulting" text="Security Watch &#x2013; BH Consulting" description="Security Watch &#x2013; BH Consulting" type="rss" xmlUrl="http://bhconsulting.ie/securitywatch/feed/" htmlUrl="http://bhconsulting.ie"/>
+      <outline title="SecurityWeek RSS Feed" text="SecurityWeek RSS Feed" description="SecurityWeek RSS Feed" type="rss" xmlUrl="http://feeds.feedburner.com/Securityweek?format=xml" htmlUrl="https://www.securityweek.com"/>
+      <outline title="Seguridad y Firewall" text="Seguridad y Firewall" description="Seguridad y Firewall" type="atom" xmlUrl="https://www.seguridadyfirewall.cl/feeds/posts/default" htmlUrl="http://www.seguridadyfirewall.cl/"/>
+      <outline title="TechWorm" text="TechWorm" description="TechWorm" type="rss" xmlUrl="https://www.techworm.net/feed" htmlUrl="https://www.techworm.net"/>
+      <outline title="The Hacker News" text="The Hacker News" description="The Hacker News" type="rss" xmlUrl="http://feeds.feedburner.com/TheHackersNews?format=xml" htmlUrl="https://thehackernews.com/"/>
+      <outline title="The Security Ledger" text="The Security Ledger" description="The Security Ledger" type="rss" xmlUrl="https://feeds.feedblitz.com/thesecurityledger" htmlUrl="https://securityledger.com"/>
+      <outline title="Threatpost" text="Threatpost" description="Threatpost" type="rss" xmlUrl="https://threatpost.com/feed/" htmlUrl="https://threatpost.com"/>
+      <outline title="WeLiveSecurity" text="WeLiveSecurity" description="WeLiveSecurity" type="rss" xmlUrl="http://feeds.feedburner.com/eset/blog/" htmlUrl="https://www.welivesecurity.com"/>
+    </outline>
+  </body>
+</opml>
